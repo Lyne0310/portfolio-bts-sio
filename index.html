@@ -1,170 +1,1429 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marlyne Maximin - Portfolio BTS SIO</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #0f172a;
-            color: white;
-        }
+<title>Marlyne OS — Portfolio</title>
 
-        header {
-            text-align: center;
-            padding: 100px 20px;
-            background: linear-gradient(135deg, #0f172a, #1e3a8a);
-        }
+<style>
+/* =========================
+   MARLYNE OS
+   Portfolio BTS SIO SLAM
+   ========================= */
 
-        h1 {
-            font-size: 50px;
-            margin-bottom: 10px;
-        }
+* {
+    box-sizing: border-box;
+}
 
-        header p {
-            font-size: 22px;
-            color: #cbd5e1;
-        }
+html {
+    scroll-behavior: smooth;
+}
 
-        nav {
-            text-align: center;
-            padding: 20px;
-            background: #020617;
-        }
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: white;
+    overflow-x: hidden;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(74, 144, 226, .25), transparent 30%),
+        radial-gradient(circle at 80% 30%, rgba(150, 100, 255, .20), transparent 30%),
+        linear-gradient(135deg, #07101f, #111a35 50%, #090d1a);
+}
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-        }
+/* Fond lumineux */
 
-        section {
-            max-width: 1000px;
-            margin: auto;
-            padding: 70px 20px;
-        }
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background:
+        radial-gradient(circle at 50% 100%, rgba(60, 130, 255, .15), transparent 40%);
+    z-index: -1;
+}
 
-        h2 {
-            color: #60a5fa;
-            font-size: 32px;
-        }
+/* =========================
+   BARRE DU HAUT
+   ========================= */
 
-        .card {
-            background: #1e293b;
-            padding: 25px;
-            margin: 20px 0;
-            border-radius: 15px;
-        }
+.topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 42px;
+    z-index: 1000;
 
-        footer {
-            text-align: center;
-            padding: 30px;
-            background: #020617;
-            color: #94a3b8;
-        }
-    </style>
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 20px;
+
+    background: rgba(8, 13, 28, .72);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.logo {
+    font-weight: 700;
+    letter-spacing: .5px;
+}
+
+.menu {
+    display: flex;
+    gap: 22px;
+    font-size: 13px;
+    color: #d9e2f2;
+}
+
+.menu span {
+    cursor: pointer;
+    transition: .2s;
+}
+
+.menu span:hover {
+    color: #68a9ff;
+}
+
+.time {
+    font-size: 13px;
+    color: #dbe8ff;
+}
+
+/* =========================
+   BARRE LATÉRALE
+   ========================= */
+
+.sidebar {
+    position: fixed;
+    left: 15px;
+    top: 65px;
+    bottom: 85px;
+    width: 82px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 11px;
+
+    z-index: 100;
+
+    padding: 10px 7px;
+
+    background: rgba(15, 23, 42, .55);
+    border: 1px solid rgba(255,255,255,.10);
+    border-radius: 24px;
+
+    backdrop-filter: blur(20px);
+    box-shadow: 0 20px 50px rgba(0,0,0,.25);
+}
+
+.app {
+    width: 65px;
+    padding: 7px 3px;
+
+    text-align: center;
+    font-size: 11px;
+
+    color: #d8e4f7;
+    border-radius: 16px;
+
+    cursor: pointer;
+    transition: .25s;
+}
+
+.app:hover {
+    transform: translateY(-3px);
+    background: rgba(255,255,255,.10);
+}
+
+.app.active {
+    background: rgba(50, 130, 255, .22);
+    border: 1px solid rgba(70,150,255,.55);
+    box-shadow: 0 0 25px rgba(50,130,255,.18);
+}
+
+.app-icon {
+    width: 42px;
+    height: 42px;
+
+    margin: auto auto 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 13px;
+
+    font-size: 20px;
+
+    background: linear-gradient(145deg, #477ff0, #7b6ee8);
+    box-shadow: inset 0 1px rgba(255,255,255,.35);
+}
+
+/* =========================
+   CONTENU
+   ========================= */
+
+main {
+    min-height: 100vh;
+    padding: 110px 100px 130px 130px;
+}
+
+.hero {
+    max-width: 1100px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 1.2fr .8fr;
+    gap: 45px;
+    align-items: center;
+}
+
+.eyebrow {
+    color: #79b5ff;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 12px;
+}
+
+h1 {
+    margin: 12px 0;
+    font-size: clamp(55px, 8vw, 100px);
+    line-height: .9;
+    letter-spacing: -5px;
+}
+
+.gradient {
+    background: linear-gradient(90deg, #fff, #70aaff, #a68cff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.subtitle {
+    font-size: 24px;
+    margin: 25px 0 12px;
+}
+
+.description {
+    max-width: 570px;
+    color: #b9c8dd;
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 28px;
+    flex-wrap: wrap;
+}
+
+button {
+    border: 0;
+    cursor: pointer;
+    color: white;
+    font-size: 14px;
+    padding: 14px 22px;
+    border-radius: 14px;
+    transition: .25s;
+}
+
+.primary {
+    background: linear-gradient(135deg, #438cff, #6c6cf2);
+    box-shadow: 0 10px 30px rgba(60,130,255,.25);
+}
+
+.secondary {
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.15);
+}
+
+button:hover {
+    transform: translateY(-3px);
+}
+
+/* =========================
+   WIDGETS
+   ========================= */
+
+.widgets {
+    display: grid;
+    gap: 15px;
+}
+
+.widget {
+    padding: 20px;
+    border-radius: 22px;
+
+    background: rgba(17, 26, 49, .65);
+    border: 1px solid rgba(255,255,255,.12);
+
+    backdrop-filter: blur(18px);
+    box-shadow: 0 20px 50px rgba(0,0,0,.25);
+}
+
+.widget-title {
+    font-size: 13px;
+    color: #91b8ed;
+    margin-bottom: 12px;
+}
+
+.clock {
+    font-size: 38px;
+    font-weight: 600;
+}
+
+.goal {
+    display: flex;
+    gap: 9px;
+    margin: 10px 0;
+    color: #d7e1ef;
+}
+
+.goal input {
+    accent-color: #5b9cff;
+}
+
+/* =========================
+   TERMINAL
+   ========================= */
+
+.terminal {
+    background: #050a13;
+    border: 1px solid rgba(255,255,255,.10);
+    border-radius: 18px;
+    padding: 20px;
+
+    font-family: "SFMono-Regular", Consolas, monospace;
+    color: #7de0ff;
+
+    box-shadow: inset 0 0 40px rgba(0,0,0,.35);
+}
+
+.terminal .white {
+    color: white;
+}
+
+/* =========================
+   SECTIONS
+   ========================= */
+
+.section {
+    max-width: 1100px;
+    margin: 100px auto 0;
+}
+
+.section-title {
+    font-size: 38px;
+    margin-bottom: 25px;
+}
+
+.section-title span {
+    color: #67a9ff;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.card {
+    padding: 25px;
+    border-radius: 20px;
+
+    background: rgba(18, 28, 52, .65);
+    border: 1px solid rgba(255,255,255,.10);
+
+    backdrop-filter: blur(18px);
+    transition: .25s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(80,150,255,.45);
+}
+
+.card-icon {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    margin: 0 0 8px;
+}
+
+.card p {
+    color: #aebdd2;
+    line-height: 1.6;
+}
+
+/* =========================
+   COMPÉTENCES
+   ========================= */
+
+.skills {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.skill {
+    padding: 20px;
+    border-radius: 18px;
+
+    background: rgba(255,255,255,.05);
+    border: 1px solid rgba(255,255,255,.08);
+}
+
+.skill-name {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.learning {
+    color: #8ba2be;
+    font-size: 12px;
+}
+
+.bar {
+    height: 7px;
+    border-radius: 20px;
+    background: rgba(255,255,255,.09);
+    overflow: hidden;
+}
+
+.bar span {
+    display: block;
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg,#3e91ff,#8b7cff);
+    border-radius: inherit;
+    transition: width 1s ease;
+}
+
+/* =========================
+   DOCK
+   ========================= */
+
+.dock {
+    position: fixed;
+    left: 50%;
+    bottom: 18px;
+    transform: translateX(-50%);
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 9px 13px;
+
+    z-index: 900;
+
+    background: rgba(18,25,45,.72);
+    border: 1px solid rgba(255,255,255,.14);
+    border-radius: 22px;
+
+    backdrop-filter: blur(25px);
+
+    box-shadow: 0 15px 50px rgba(0,0,0,.35);
+}
+
+.dock-item {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 22px;
+
+    border-radius: 14px;
+
+    cursor: pointer;
+    transition: .25s;
+}
+
+.dock-item:hover {
+    transform: translateY(-9px) scale(1.08);
+    background: rgba(255,255,255,.12);
+}
+
+/* =========================
+   FENÊTRES
+   ========================= */
+
+.window {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%) scale(.94);
+
+    width: min(720px, calc(100% - 35px));
+    max-height: 80vh;
+    overflow: auto;
+
+    z-index: 2000;
+
+    display: none;
+
+    background: rgba(11,18,34,.91);
+    border: 1px solid rgba(255,255,255,.16);
+    border-radius: 22px;
+
+    backdrop-filter: blur(30px);
+
+    box-shadow: 0 30px 100px rgba(0,0,0,.65);
+
+    animation: openWindow .25s forwards;
+}
+
+@keyframes openWindow {
+    to {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+.window-header {
+    position: sticky;
+    top: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 15px 18px;
+
+    background: rgba(10,17,32,.85);
+    border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.window-buttons {
+    display: flex;
+    gap: 7px;
+}
+
+.dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: #667;
+}
+
+.close {
+    cursor: pointer;
+    color: #cbd5e1;
+    font-size: 20px;
+}
+
+.window-content {
+    padding: 30px;
+}
+
+.window-content h2 {
+    font-size: 35px;
+    margin-top: 0;
+}
+
+.window-content p {
+    color: #bdc9d9;
+    line-height: 1.7;
+}
+
+.window-content li {
+    margin: 10px 0;
+    color: #c4d0df;
+}
+
+/* =========================
+   OVERLAY
+   ========================= */
+
+.overlay {
+    position: fixed;
+    inset: 0;
+
+    z-index: 1500;
+
+    display: none;
+
+    background: rgba(0,0,0,.45);
+    backdrop-filter: blur(4px);
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 900px) {
+
+    .menu {
+        display: none;
+    }
+
+    .sidebar {
+        width: 60px;
+        left: 8px;
+    }
+
+    .app {
+        width: 50px;
+        font-size: 9px;
+    }
+
+    .app-icon {
+        width: 37px;
+        height: 37px;
+        font-size: 17px;
+    }
+
+    main {
+        padding: 100px 20px 120px 85px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+    }
+
+    .cards,
+    .skills {
+        grid-template-columns: 1fr;
+    }
+
+    h1 {
+        letter-spacing: -3px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .topbar {
+        padding: 0 10px;
+    }
+
+    .time {
+        display: none;
+    }
+
+    main {
+        padding-left: 75px;
+        padding-right: 12px;
+    }
+
+    .sidebar {
+        bottom: 80px;
+    }
+
+    .dock {
+        max-width: calc(100% - 30px);
+        overflow-x: auto;
+    }
+
+    .dock-item {
+        min-width: 43px;
+    }
+
+    .subtitle {
+        font-size: 20px;
+    }
+
+    .description {
+        font-size: 14px;
+    }
+
+    .window-content {
+        padding: 22px;
+    }
+}
+</style>
 </head>
 
 <body>
 
-    <nav>
-        <a href="#about">À propos</a>
-        <a href="#competences">Compétences</a>
-        <a href="#projets">Projets</a>
-        <a href="#veille">Veille</a>
-        <a href="#contact">Contact</a>
+<!-- =========================
+     BARRE DU HAUT
+     ========================= -->
+
+<header class="topbar">
+
+    <div class="logo"> Marlyne OS</div>
+
+    <nav class="menu">
+        <span onclick="openWindow('about')">À propos</span>
+        <span onclick="openWindow('skills')">Compétences</span>
+        <span onclick="openWindow('projects')">Projets</span>
+        <span onclick="openWindow('watch')">Veille</span>
+        <span onclick="openWindow('bts')">BTS SIO</span>
     </nav>
 
-    <header>
-        <h1>Marlyne Maximin</h1>
-        <p>Étudiante en BTS SIO – Option SLAM</p>
-        <p>Développement informatique • Technologies numériques • Projets</p>
-    </header>
+    <div class="time" id="topTime">--:--</div>
 
-    <section id="about">
-        <h2>À propos de moi</h2>
+</header>
 
-        <div class="card">
-            <p>
-                Bonjour et bienvenue sur mon portfolio !
+
+<!-- =========================
+     BARRE LATÉRALE
+     ========================= -->
+
+<aside class="sidebar">
+
+    <div class="app active" onclick="goHome()">
+        <div class="app-icon">⌂</div>
+        Accueil
+    </div>
+
+    <div class="app" onclick="openWindow('about')">
+        <div class="app-icon">👤</div>
+        À propos
+    </div>
+
+    <div class="app" onclick="openWindow('skills')">
+        <div class="app-icon">&lt;/&gt;</div>
+        Compétences
+    </div>
+
+    <div class="app" onclick="openWindow('projects')">
+        <div class="app-icon">📁</div>
+        Projets
+    </div>
+
+    <div class="app" onclick="openWindow('watch')">
+        <div class="app-icon">📊</div>
+        Veille
+    </div>
+
+    <div class="app" onclick="openWindow('bts')">
+        <div class="app-icon">🎓</div>
+        BTS SIO
+    </div>
+
+    <div class="app" onclick="openWindow('experience')">
+        <div class="app-icon">💼</div>
+        Expériences
+    </div>
+
+    <div class="app" onclick="openWindow('contact')">
+        <div class="app-icon">✉️</div>
+        Contact
+    </div>
+
+</aside>
+
+
+<!-- =========================
+     CONTENU PRINCIPAL
+     ========================= -->
+
+<main id="home">
+
+    <section class="hero">
+
+        <div>
+
+            <div class="eyebrow">
+                Développeuse en devenir
+            </div>
+
+            <h1>
+                Marlyne<br>
+                <span class="gradient">Maximin</span>
+            </h1>
+
+            <div class="subtitle">
+                Étudiante en BTS SIO — Option SLAM
+            </div>
+
+            <p class="description">
+                Passionnée par l'informatique, les nouvelles technologies
+                et la découverte du monde, je construis aujourd'hui
+                les compétences de demain.
             </p>
 
-            <p>
-                Je suis actuellement étudiante en BTS SIO,
-                option SLAM. Je découvre et développe progressivement
-                mes compétences dans le domaine de l'informatique
-                et du développement.
-            </p>
+            <div class="buttons">
 
-            <p>
-                Ce portfolio présente mon parcours, mes compétences,
-                mes projets réalisés pendant ma formation ainsi que
-                ma progression.
-            </p>
+                <button class="primary"
+                        onclick="openWindow('about')">
+                    Découvrir mon univers →
+                </button>
+
+                <button class="secondary"
+                        onclick="openWindow('projects')">
+                    📁 Voir mes projets
+                </button>
+
+            </div>
+
+            <div style="margin-top:25px;font-size:25px;display:flex;gap:18px;">
+                <span>◉</span>
+                <span>in</span>
+                <span>✉</span>
+            </div>
+
         </div>
+
+
+        <!-- WIDGETS -->
+
+        <div class="widgets">
+
+            <div class="widget">
+
+                <div class="widget-title">
+                    MERCREDI — AUJOURD'HUI
+                </div>
+
+                <div class="clock" id="bigClock">
+                    --:--
+                </div>
+
+                <div style="color:#9fb0c8;font-size:13px;">
+                    Bienvenue dans Marlyne OS
+                </div>
+
+            </div>
+
+
+            <div class="widget">
+
+                <div class="widget-title">
+                    🎵 EN COURS
+                </div>
+
+                <strong>Good Ideas Better Code</strong>
+
+                <div style="margin-top:12px;">
+                    ───────────
+                </div>
+
+                <div style="display:flex;justify-content:space-between;margin-top:8px;">
+                    <span>◀</span>
+                    <span>▶</span>
+                    <span>▶▶</span>
+                </div>
+
+            </div>
+
+
+            <div class="widget">
+
+                <div class="widget-title">
+                    🎯 MES OBJECTIFS
+                </div>
+
+                <label class="goal">
+                    <input type="checkbox" checked>
+                    Avancer sur mon portfolio
+                </label>
+
+                <label class="goal">
+                    <input type="checkbox">
+                    Développer mes compétences
+                </label>
+
+                <label class="goal">
+                    <input type="checkbox">
+                    Créer mes premiers projets
+                </label>
+
+                <label class="goal">
+                    <input type="checkbox">
+                    Construire mon avenir dans le numérique
+                </label>
+
+            </div>
+
+        </div>
+
     </section>
 
-    <section id="competences">
+
+    <!-- TERMINAL -->
+
+    <section class="section">
+
+        <div class="terminal">
+
+            <div>
+                <span class="white">marlyne@portfolio</span>:~$ whoami
+            </div>
+
+            <div>
+                Marlyne Maximin
+            </div>
+
+            <br>
+
+            <div>
+                <span class="white">marlyne@portfolio</span>:~$ status
+            </div>
+
+            <div>
+                Étudiante en BTS SIO — SLAM
+            </div>
+
+            <div>
+                Curieuse · motivée · créative
+            </div>
+
+            <br>
+
+            <div>
+                <span class="white">marlyne@portfolio</span>:~$ mission
+            </div>
+
+            <div>
+                Apprendre. Développer. Voyager. Évoluer.
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- À PROPOS -->
+
+    <section class="section">
+
+        <h2 class="section-title">
+            À propos <span>de moi</span>
+        </h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <div class="card-icon">👩‍💻</div>
+                <h3>Mon parcours</h3>
+                <p>
+                    Je suis actuellement étudiante en BTS SIO,
+                    option SLAM, et je découvre progressivement
+                    le développement informatique.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🌱</div>
+                <h3>Mon évolution</h3>
+                <p>
+                    J'apprends chaque jour de nouvelles notions
+                    et je construis progressivement mes compétences.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🌍</div>
+                <h3>Mes inspirations</h3>
+                <p>
+                    Technologie, créativité, art, découverte
+                    et voyage font partie des univers qui m'inspirent.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- COMPÉTENCES -->
+
+    <section class="section">
+
+        <h2 class="section-title">
+            Mes <span>compétences</span>
+        </h2>
+
+        <div class="skills">
+
+            <div class="skill">
+                <div class="skill-name">
+                    <strong>HTML</strong>
+                    <span>En apprentissage</span>
+                </div>
+                <div class="bar">
+                    <span style="width:45%"></span>
+                </div>
+            </div>
+
+            <div class="skill">
+                <div class="skill-name">
+                    <strong>CSS</strong>
+                    <span>En apprentissage</span>
+                </div>
+                <div class="bar">
+                    <span style="width:35%"></span>
+                </div>
+            </div>
+
+            <div class="skill">
+                <div class="skill-name">
+                    <strong>JavaScript</strong>
+                    <span>À découvrir</span>
+                </div>
+                <div class="bar">
+                    <span style="width:15%"></span>
+                </div>
+            </div>
+
+            <div class="skill">
+                <div class="skill-name">
+                    <strong>PHP</strong>
+                    <span>À découvrir</span>
+                </div>
+                <div class="bar">
+                    <span style="width:10%"></span>
+                </div>
+            </div>
+
+            <div class="skill">
+                <div class="skill-name">
+                    <strong>SQL / MySQL</strong>
+                    <span>À découvrir</span>
+                </div>
+                <div class="bar">
+                    <span style="width:10%"></span>
+                </div>
+            </div>
+
+            <div class="skill">
+                <div class="skill-name">
+                    <strong>Git / GitHub</strong>
+                    <span>En découverte</span>
+                </div>
+                <div class="bar">
+                    <span style="width:25%"></span>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- =========================
+     OVERLAY
+     ========================= -->
+
+<div class="overlay" id="overlay" onclick="closeWindows()"></div>
+
+
+<!-- =========================
+     FENÊTRE À PROPOS
+     ========================= -->
+
+<div class="window" id="about">
+
+    <div class="window-header">
+
+        <div class="window-buttons">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+
+        <strong>À propos de Marlyne</strong>
+
+        <div class="close" onclick="closeWindows()">×</div>
+
+    </div>
+
+    <div class="window-content">
+
+        <h2>Qui suis-je ?</h2>
+
+        <p>
+            Bonjour, je suis <strong>Marlyne Maximin</strong>,
+            étudiante en BTS SIO option SLAM.
+        </p>
+
+        <p>
+            J'ai choisi de me tourner vers l'informatique et
+            le développement afin de construire de nouvelles
+            compétences et découvrir un domaine qui m'intéresse.
+        </p>
+
+        <p>
+            Ce portfolio me permet de présenter mon parcours,
+            mes apprentissages, mes projets et mon évolution.
+        </p>
+
+        <ul>
+            <li>🎓 BTS SIO — option SLAM</li>
+            <li>💻 Développement informatique</li>
+            <li>🎨 Créativité</li>
+            <li>🌍 Voyage et découverte</li>
+        </ul>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     FENÊTRE COMPÉTENCES
+     ========================= -->
+
+<div class="window" id="skills">
+
+    <div class="window-header">
+
+        <div class="window-buttons">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+
+        <strong>Compétences</strong>
+
+        <div class="close" onclick="closeWindows()">×</div>
+
+    </div>
+
+    <div class="window-content">
+
         <h2>Mes compétences</h2>
 
-        <div class="card">
-            <h3>Développement</h3>
-            <p>HTML • CSS • JavaScript • PHP • SQL</p>
+        <p>
+            Je suis actuellement en phase d'apprentissage.
+            Cette section évoluera au fil de ma formation.
+        </p>
+
+        <ul>
+            <li>HTML — structure des pages web</li>
+            <li>CSS — mise en forme et design</li>
+            <li>JavaScript — à découvrir progressivement</li>
+            <li>PHP — à découvrir</li>
+            <li>SQL / MySQL — à découvrir</li>
+            <li>Git / GitHub — premiers apprentissages</li>
+        </ul>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     FENÊTRE PROJETS
+     ========================= -->
+
+<div class="window" id="projects">
+
+    <div class="window-header">
+
+        <div class="window-buttons">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
         </div>
 
-        <div class="card">
-            <h3>Outils</h3>
-            <p>Git • GitHub • GitHub Pages</p>
-        </div>
+        <strong>Mes projets</strong>
+
+        <div class="close" onclick="closeWindows()">×</div>
+
+    </div>
+
+    <div class="window-content">
+
+        <h2>📁 Mes projets</h2>
+
+        <p>
+            Cette partie sera progressivement remplie avec
+            mes projets réalisés pendant mon BTS SIO.
+        </p>
 
         <div class="card">
-            <h3>En cours d'apprentissage</h3>
+            <h3>🌐 Portfolio BTS SIO</h3>
             <p>
-                Développement web, programmation,
-                bases de données et environnement informatique.
+                Création et mise en ligne de mon portfolio
+                avec HTML, CSS et GitHub Pages.
             </p>
         </div>
-    </section>
 
-    <section id="projets">
-        <h2>Mes projets</h2>
+        <br>
 
         <div class="card">
-            <h3>Projet à venir</h3>
+            <h3>🚀 Prochain projet</h3>
             <p>
-                Cette section sera complétée au fur et à mesure
-                de ma formation en BTS SIO.
+                À venir pendant ma formation...
             </p>
         </div>
-    </section>
 
-    <section id="veille">
-        <h2>Veille technologique</h2>
+    </div>
 
-        <div class="card">
-            <h3>Mes sujets de veille</h3>
-            <p>
-                Je présenterai ici mes recherches et ma veille
-                technologique dans le domaine informatique.
-            </p>
+</div>
+
+
+<!-- =========================
+     FENÊTRE VEILLE
+     ========================= -->
+
+<div class="window" id="watch">
+
+    <div class="window-header">
+
+        <div class="window-buttons">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
         </div>
-    </section>
 
-    <section id="contact">
-        <h2>Contact</h2>
+        <strong>Veille technologique</strong>
 
-        <div class="card">
-            <p>GitHub : mon profil GitHub</p>
-            <p>Email : à compléter</p>
+        <div class="close" onclick="closeWindows()">×</div>
+
+    </div>
+
+    <div class="window-content">
+
+        <h2>🔎 Ma veille</h2>
+
+        <p>
+            Cette section sera consacrée à ma veille
+            technologique dans le domaine informatique.
+        </p>
+
+        <p>
+            J'y présenterai progressivement les sujets,
+            technologies et actualités que je souhaite suivre.
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     FENÊTRE BTS
+     ========================= -->
+
+<div class="window" id="bts">
+
+    <div class="window-header">
+
+        <div class="window-buttons">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
         </div>
-    </section>
 
-    <footer>
-        © 2026 Marlyne Maximin — Portfolio BTS SIO SLAM
-    </footer>
+        <strong>BTS SIO — SLAM</strong>
+
+        <div class="close" onclick="closeWindows()">×</div>
+
+    </div>
+
+    <div class="window-content">
+
+        <h2>🎓 BTS SIO</h2>
+
+        <p>
+            Je suis actuellement en BTS Services Informatiques
+            aux Organisations, option SLAM.
+        </p>
+
+        <p>
+            L'option SLAM est orientée vers la conception,
+            le développement et la maintenance de solutions
+            logicielles.
+        </p>
+
+        <p>
+            Cette page sera enrichie au fur et à mesure de
+            ma formation avec mes compétences et mes travaux.
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     FENÊTRE EXPÉRIENCES
+     ========================= -->
+
+<div class="window" id="experience">
+
+    <div class="window-header">
+
+        <div class="window-buttons">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+
+        <strong>Expériences</strong>
+
+        <div class="close" onclick="closeWindows()">×</div>
+
+    </div>
+
+    <div class="window-content">
+
+        <h2>💼 Mes expériences</h2>
+
+        <p>
+            Cette section présentera mes expériences
+            professionnelles et les compétences que j'ai
+            développées au cours de mon parcours.
+        </p>
+
+        <p>
+            Elle sera complétée progressivement avec les
+            informations pertinentes pour mon projet professionnel.
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     FENÊTRE CONTACT
+     ========================= -->
+
+<div class="window" id="contact">
+
+    <div class="window-header">
+
+        <div class="window-buttons">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+
+        <strong>Contact</strong>
+
+        <div class="close" onclick="closeWindows()">×</div>
+
+    </div>
+
+    <div class="window-content">
+
+        <h2>✉️ Me contacter</h2>
+
+        <p>
+            Tu souhaites me contacter ?
+        </p>
+
+        <p>
+            📧 Mon adresse email sera ajoutée ici.
+        </p>
+
+        <p>
+            💻 Mon GitHub sera également ajouté ici.
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     DOCK
+     ========================= -->
+
+<div class="dock">
+
+    <div class="dock-item" onclick="goHome()" title="Accueil">
+        🏠
+    </div>
+
+    <div class="dock-item" onclick="openWindow('about')" title="À propos">
+        👤
+    </div>
+
+    <div class="dock-item" onclick="openWindow('skills')" title="Compétences">
+        💻
+    </div>
+
+    <div class="dock-item" onclick="openWindow('projects')" title="Projets">
+        📁
+    </div>
+
+    <div class="dock-item" onclick="openWindow('watch')" title="Veille">
+        🔎
+    </div>
+
+    <div class="dock-item" onclick="openWindow('bts')" title="BTS SIO">
+        🎓
+    </div>
+
+    <div class="dock-item" onclick="openWindow('contact')" title="Contact">
+        ✉️
+    </div>
+
+</div>
+
+
+<!-- =========================
+     JAVASCRIPT
+     ========================= -->
+
+<script>
+
+function openWindow(id) {
+
+    closeWindows();
+
+    const windowElement = document.getElementById(id);
+    const overlay = document.getElementById("overlay");
+
+    if (windowElement) {
+        windowElement.style.display = "block";
+        overlay.style.display = "block";
+    }
+}
+
+
+function closeWindows() {
+
+    document.querySelectorAll(".window").forEach(function(windowElement) {
+        windowElement.style.display = "none";
+    });
+
+    document.getElementById("overlay").style.display = "none";
+}
+
+
+function goHome() {
+
+    closeWindows();
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
+
+function updateClock() {
+
+    const now = new Date();
+
+    const hours = String(now.getHours()).padStart(2, "0");
+    const minutes = String(now.getMinutes()).padStart(2, "0");
+
+    document.getElementById("topTime").textContent =
+        hours + ":" + minutes;
+
+    document.getElementById("bigClock").textContent =
+        hours + ":" + minutes;
+}
+
+
+updateClock();
+
+setInterval(updateClock, 1000);
+
+</script>
 
 </body>
 </html>
