@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marlyne Maximin - Portfolio BTS SIO</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #0f172a;
+            color: white;
+        }
+
+        header {
+            text-align: center;
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #0f172a, #1e3a8a);
+        }
+
+        h1 {
+            font-size: 50px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 22px;
+            color: #cbd5e1;
+        }
+
+        nav {
+            text-align: center;
+            padding: 20px;
+            background: #020617;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        section {
+            max-width: 1000px;
+            margin: auto;
+            padding: 70px 20px;
+        }
+
+        h2 {
+            color: #60a5fa;
+            font-size: 32px;
+        }
+
+        .card {
+            background: #1e293b;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 15px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #020617;
+            color: #94a3b8;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="#about">À propos</a>
+        <a href="#competences">Compétences</a>
+        <a href="#projets">Projets</a>
+        <a href="#veille">Veille</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <header>
+        <h1>Marlyne Maximin</h1>
+        <p>Étudiante en BTS SIO – Option SLAM</p>
+        <p>Développement informatique • Technologies numériques • Projets</p>
+    </header>
+
+    <section id="about">
+        <h2>À propos de moi</h2>
+
+        <div class="card">
+            <p>
+                Bonjour et bienvenue sur mon portfolio !
+            </p>
+
+            <p>
+                Je suis actuellement étudiante en BTS SIO,
+                option SLAM. Je découvre et développe progressivement
+                mes compétences dans le domaine de l'informatique
+                et du développement.
+            </p>
+
+            <p>
+                Ce portfolio présente mon parcours, mes compétences,
+                mes projets réalisés pendant ma formation ainsi que
+                ma progression.
+            </p>
+        </div>
+    </section>
+
+    <section id="competences">
+        <h2>Mes compétences</h2>
+
+        <div class="card">
+            <h3>Développement</h3>
+            <p>HTML • CSS • JavaScript • PHP • SQL</p>
+        </div>
+
+        <div class="card">
+            <h3>Outils</h3>
+            <p>Git • GitHub • GitHub Pages</p>
+        </div>
+
+        <div class="card">
+            <h3>En cours d'apprentissage</h3>
+            <p>
+                Développement web, programmation,
+                bases de données et environnement informatique.
+            </p>
+        </div>
+    </section>
+
+    <section id="projets">
+        <h2>Mes projets</h2>
+
+        <div class="card">
+            <h3>Projet à venir</h3>
+            <p>
+                Cette section sera complétée au fur et à mesure
+                de ma formation en BTS SIO.
+            </p>
+        </div>
+    </section>
+
+    <section id="veille">
+        <h2>Veille technologique</h2>
+
+        <div class="card">
+            <h3>Mes sujets de veille</h3>
+            <p>
+                Je présenterai ici mes recherches et ma veille
+                technologique dans le domaine informatique.
+            </p>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+
+        <div class="card">
+            <p>GitHub : mon profil GitHub</p>
+            <p>Email : à compléter</p>
+        </div>
+    </section>
+
+    <footer>
+        © 2026 Marlyne Maximin — Portfolio BTS SIO SLAM
+    </footer>
+
+</body>
+</html>
