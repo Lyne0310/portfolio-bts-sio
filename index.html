@@ -93,6 +93,39 @@ body::before {
     color: #dbe8ff;
 }
 
+.topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 7px 14px;
+    width: 210px;
+
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 999px;
+
+    color: #8ea0bd;
+    font-size: 13px;
+}
+
+.search-box svg {
+    flex-shrink: 0;
+    opacity: .7;
+}
+
+@media (max-width: 900px) {
+    .search-box {
+        display: none;
+    }
+}
+
 /* =========================
    BARRE LATÉRALE
    ========================= */
@@ -174,13 +207,71 @@ main {
 }
 
 .hero {
-    max-width: 1100px;
+    max-width: 1280px;
     margin: auto;
 
     display: grid;
-    grid-template-columns: 1.2fr .8fr;
-    gap: 45px;
+    grid-template-columns: 300px 1fr 320px;
+    gap: 40px;
     align-items: center;
+}
+
+.hero-photo img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 22px 35px rgba(0,0,0,.45));
+    display: block;
+}
+
+.social-links {
+    margin-top: 25px;
+    display: flex;
+    gap: 14px;
+}
+
+.social-links a {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #d8e4f7;
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.14);
+    border-radius: 50%;
+
+    transition: .25s;
+}
+
+.social-links a:hover {
+    transform: translateY(-3px);
+    background: rgba(80,150,255,.22);
+    border-color: rgba(90,160,255,.5);
+}
+
+@media (max-width: 1100px) {
+    .hero {
+        grid-template-columns: 240px 1fr;
+    }
+    .widgets {
+        grid-column: 1 / -1;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .hero {
+        grid-template-columns: 1fr;
+    }
+    .widgets {
+        grid-template-columns: 1fr;
+    }
+    .hero-photo img {
+        max-width: 260px;
+        margin: 0 auto;
+    }
 }
 
 .eyebrow {
@@ -289,6 +380,65 @@ button:hover {
     accent-color: #5b9cff;
 }
 
+.widget-top-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.weather {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    color: #f2c94c;
+    white-space: nowrap;
+}
+
+.player-progress {
+    height: 4px;
+    border-radius: 4px;
+    background: rgba(255,255,255,.12);
+    margin: 14px 0 6px;
+    overflow: hidden;
+}
+
+.player-progress span {
+    display: block;
+    height: 100%;
+    width: 62%;
+    background: linear-gradient(90deg,#5b9cff,#a68cff);
+    border-radius: inherit;
+}
+
+.player-times {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: #8ea0bd;
+}
+
+.player-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+    margin-top: 12px;
+    font-size: 15px;
+    color: #d8e4f7;
+}
+
+.player-controls .play-pause {
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #5b8dff, #8a6cf2);
+    cursor: pointer;
+}
+
 /* =========================
    TERMINAL
    ========================= */
@@ -307,6 +457,46 @@ button:hover {
 
 .terminal .white {
     color: white;
+}
+
+.terminal-row {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 20px;
+    align-items: stretch;
+}
+
+.quote-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 25px 30px;
+    border-radius: 18px;
+
+    background: rgba(17, 26, 49, .5);
+    border: 1px solid rgba(255,255,255,.10);
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-style: italic;
+    font-size: 20px;
+    line-height: 1.5;
+    color: #dbe6f7;
+}
+
+.quote-card::before {
+    content: "";
+    width: 34px;
+    height: 3px;
+    background: linear-gradient(90deg,#5b9cff,#a68cff);
+    border-radius: 3px;
+    margin-bottom: 16px;
+}
+
+@media (max-width: 900px) {
+    .terminal-row {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* =========================
@@ -543,6 +733,45 @@ button:hover {
     color: #c4d0df;
 }
 
+.timeline {
+    margin-top: 20px;
+    border-left: 2px solid rgba(255,255,255,.12);
+    padding-left: 22px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 26px;
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -28px;
+    top: 5px;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: linear-gradient(135deg,#5b9cff,#a68cff);
+}
+
+.timeline-item h4 {
+    margin: 0 0 3px;
+    font-size: 16px;
+    color: white;
+}
+
+.timeline-meta {
+    font-size: 12px;
+    color: #79b5ff;
+    margin-bottom: 6px;
+}
+
+.timeline-item p {
+    margin: 0;
+    font-size: 14px;
+}
+
 /* =========================
    OVERLAY
    ========================= */
@@ -662,9 +891,16 @@ button:hover {
         <span onclick="openWindow('projects')">Projets</span>
         <span onclick="openWindow('watch')">Veille</span>
         <span onclick="openWindow('bts')">BTS SIO</span>
+        <span onclick="openWindow('contact')">Contact</span>
     </nav>
 
-    <div class="time" id="topTime">--:--</div>
+    <div class="topbar-right">
+        <div class="search-box">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            Rechercher…
+        </div>
+        <div class="time" id="topTime">--:--</div>
+    </div>
 
 </header>
 
@@ -726,11 +962,15 @@ button:hover {
 
     <section class="hero">
 
+        <!-- PHOTO -->
+        <div class="hero-photo">
+            <img src="marlyne.png" alt="Marlyne Maximin">
+        </div>
+
+
+        <!-- TEXTE -->
         <div>
 
-         <img src="marlyne.png"
-     alt="Marlyne Maximin"
-     style="width:280px;height:360px;object-fit:cover;border-radius:28px;display:block;margin-bottom:30px;">
             <div class="eyebrow">
                 Développeuse en devenir
             </div>
@@ -745,9 +985,12 @@ button:hover {
             </div>
 
             <p class="description">
-                Passionnée par l'informatique, les nouvelles technologies
-                et la découverte du monde, je construis aujourd'hui
-                les compétences de demain.
+                Après plusieurs années d'expérience dans la vente,
+                le service et la relation client, j'ai obtenu le
+                DAEU option A (2025-2026), qui m'a permis d'amorcer
+                ma reconversion vers l'informatique. Aujourd'hui
+                étudiante en BTS SIO, je construis mes nouvelles
+                compétences avec la même motivation qui m'a toujours animée.
             </p>
 
             <div class="buttons">
@@ -764,10 +1007,16 @@ button:hover {
 
             </div>
 
-            <div style="margin-top:25px;font-size:25px;display:flex;gap:18px;">
-                <span>◉</span>
-                <span>in</span>
-                <span>✉</span>
+            <div class="social-links">
+                <a href="#" title="LinkedIn" aria-label="LinkedIn">
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.66 4.78 6.12V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.86V21H9z"/></svg>
+                </a>
+                <a href="#" title="GitHub" aria-label="GitHub">
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.5 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.46-1.19-1.11-1.51-1.11-1.51-.91-.64.07-.63.07-.63 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.72 0 0 .84-.28 2.75 1.05a9.3 9.3 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.46.1 2.72.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .28.18.6.69.5A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg>
+                </a>
+                <a href="mailto:marlynemaximin@gmail.com" title="Email" aria-label="Email">
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+                </a>
             </div>
 
         </div>
@@ -779,8 +1028,11 @@ button:hover {
 
             <div class="widget">
 
-                <div class="widget-title">
-                    MERCREDI — AUJOURD'HUI
+                <div class="widget-top-row">
+                    <div class="widget-title">
+                        MERCREDI — AUJOURD'HUI
+                    </div>
+                    <div class="weather">☀️ 22°C</div>
                 </div>
 
                 <div class="clock" id="bigClock">
@@ -788,7 +1040,7 @@ button:hover {
                 </div>
 
                 <div style="color:#9fb0c8;font-size:13px;">
-                    Bienvenue dans Marlyne OS
+                    Bienvenue dans Marlyne OS ✨
                 </div>
 
             </div>
@@ -802,14 +1054,17 @@ button:hover {
 
                 <strong>Good Ideas Better Code</strong>
 
-                <div style="margin-top:12px;">
-                    ───────────
+                <div class="player-progress"><span></span></div>
+
+                <div class="player-times">
+                    <span>2:14</span>
+                    <span>-1:37</span>
                 </div>
 
-                <div style="display:flex;justify-content:space-between;margin-top:8px;">
-                    <span>◀</span>
-                    <span>▶</span>
-                    <span>▶▶</span>
+                <div class="player-controls">
+                    <span>⏮</span>
+                    <span class="play-pause">⏸</span>
+                    <span>⏭</span>
                 </div>
 
             </div>
@@ -852,38 +1107,46 @@ button:hover {
 
     <section class="section">
 
-        <div class="terminal">
+        <div class="terminal-row">
 
-            <div>
-                <span class="white">marlyne@portfolio</span>:~$ whoami
+            <div class="terminal">
+
+                <div>
+                    <span class="white">marlyne@portfolio</span>:~$ whoami
+                </div>
+
+                <div>
+                    Marlyne Maximin
+                </div>
+
+                <br>
+
+                <div>
+                    <span class="white">marlyne@portfolio</span>:~$ status
+                </div>
+
+                <div>
+                    Étudiante en BTS SIO — SLAM
+                </div>
+
+                <div>
+                    Curieuse · motivée · créative
+                </div>
+
+                <br>
+
+                <div>
+                    <span class="white">marlyne@portfolio</span>:~$ mission
+                </div>
+
+                <div>
+                    Apprendre. Développer. Voyager. Évoluer.
+                </div>
+
             </div>
 
-            <div>
-                Marlyne Maximin
-            </div>
-
-            <br>
-
-            <div>
-                <span class="white">marlyne@portfolio</span>:~$ status
-            </div>
-
-            <div>
-                Étudiante en BTS SIO — SLAM
-            </div>
-
-            <div>
-                Curieuse · motivée · créative
-            </div>
-
-            <br>
-
-            <div>
-                <span class="white">marlyne@portfolio</span>:~$ mission
-            </div>
-
-            <div>
-                Apprendre. Développer. Voyager. Évoluer.
+            <div class="quote-card">
+                "Discipline aujourd'hui, la liberté demain."
             </div>
 
         </div>
@@ -905,9 +1168,10 @@ button:hover {
                 <div class="card-icon">👩‍💻</div>
                 <h3>Mon parcours</h3>
                 <p>
-                    Je suis actuellement étudiante en BTS SIO,
-                    option SLAM, et je découvre progressivement
-                    le développement informatique.
+                    En reconversion professionnelle, j'ai obtenu le
+                    DAEU option A (2025-2026) après plusieurs années
+                    dans la vente et le service. Je suis aujourd'hui
+                    étudiante en BTS SIO, option SLAM.
                 </p>
             </div>
 
@@ -1048,6 +1312,14 @@ button:hover {
         </p>
 
         <p>
+            Après plusieurs années d'expérience professionnelle dans
+            la vente, le service et la relation client, j'ai choisi
+            de me reconvertir vers l'informatique. J'ai passé et
+            obtenu le <strong>DAEU option A (2025-2026)</strong>,
+            ce qui m'a ouvert les portes du BTS SIO.
+        </p>
+
+        <p>
             J'ai choisi de me tourner vers l'informatique et
             le développement afin de construire de nouvelles
             compétences et découvrir un domaine qui m'intéresse.
@@ -1059,6 +1331,7 @@ button:hover {
         </p>
 
         <ul>
+            <li>🎓 DAEU option A — obtenu en 2025-2026</li>
             <li>🎓 BTS SIO — option SLAM</li>
             <li>💻 Développement informatique</li>
             <li>🎨 Créativité</li>
@@ -1233,6 +1506,15 @@ button:hover {
         </p>
 
         <p>
+            Mon parcours n'est pas linéaire : après plusieurs années
+            dans la vente et le service à la clientèle, j'ai décidé
+            de me réorienter vers l'informatique. J'ai passé et
+            obtenu le <strong>DAEU option A (2025-2026)</strong>,
+            un diplôme qui m'a permis d'intégrer le BTS SIO et
+            d'entamer cette reconversion.
+        </p>
+
+        <p>
             L'option SLAM est orientée vers la conception,
             le développement et la maintenance de solutions
             logicielles.
@@ -1273,15 +1555,66 @@ button:hover {
         <h2>💼 Mes expériences</h2>
 
         <p>
-            Cette section présentera mes expériences
-            professionnelles et les compétences que j'ai
-            développées au cours de mon parcours.
+            Avant l'informatique, j'ai passé plusieurs années dans
+            la vente, le service et la relation client. Ces expériences
+            m'ont apporté autonomie, sens de l'organisation et aisance
+            avec le public — des compétences que je mets aujourd'hui
+            au service de ma reconversion.
         </p>
 
-        <p>
-            Elle sera complétée progressivement avec les
-            informations pertinentes pour mon projet professionnel.
-        </p>
+        <div class="timeline">
+
+            <div class="timeline-item">
+                <h4>Serveuse salle et bar</h4>
+                <div class="timeline-meta">Le Cardinal, Brive-la-Gaillarde — jan. à sept. 2025</div>
+                <p>Mise en place, service, préparation de boissons, encaissement.</p>
+            </div>
+
+            <div class="timeline-item">
+                <h4>Spa Manager</h4>
+                <div class="timeline-meta">Beauty Spa, Lagny-sur-Marne — mai 2023 à juin 2024</div>
+                <p>Gestion du planning, de la caisse et de la carte des soins, encadrement d'une équipe de 3 personnes.</p>
+            </div>
+
+            <div class="timeline-item">
+                <h4>Vendeuse en boulangerie</h4>
+                <div class="timeline-meta">Brioche Dorée, Gare de Marne-la-Vallée Chessy — jan. à avril 2023</div>
+                <p>Préparation en cuisine, service et gestion de la caisse.</p>
+            </div>
+
+            <div class="timeline-item">
+                <h4>Serveuse polyvalente</h4>
+                <div class="timeline-meta">Graziella, Montévrain — juin à déc. 2022</div>
+                <p>Accueil client, prise de commande, service et encaissement.</p>
+            </div>
+
+            <div class="timeline-item">
+                <h4>Vendeuse Luxe</h4>
+                <div class="timeline-meta">Hugo Boss France SAS, Serris — juin 2021 à mai 2022</div>
+                <p>Vente de prêt-à-porter et d'accessoires, gestion de la caisse.</p>
+            </div>
+
+            <div class="timeline-item">
+                <h4>Responsable boulangerie</h4>
+                <div class="timeline-meta">Boulangerie Louise, Saint-Thibault-des-Vignes — oct. 2017 à juil. 2019</div>
+                <p>Gestion d'équipe, caisse, plannings et marketing.</p>
+            </div>
+
+            <div class="timeline-item">
+                <h4>Esthéticienne praticienne</h4>
+                <div class="timeline-meta">Body Minute, Paris — juin 2015 à juil. 2017</div>
+                <p>Soins visage, épilations, massages et manucure.</p>
+            </div>
+
+        </div>
+
+        <h2 style="margin-top:35px;font-size:24px;">🎓 Diplômes</h2>
+
+        <ul>
+            <li>DAEU option A — obtenu en 2025-2026</li>
+            <li>CAP Esthétique Cosmétique et Parfumerie (en alternance) — 2015-2017</li>
+            <li>BEPC — 2013-2014</li>
+        </ul>
 
     </div>
 
@@ -1317,7 +1650,7 @@ button:hover {
         </p>
 
         <p>
-            📧 Mon adresse email sera ajoutée ici.
+            📧 <a href="mailto:marlynemaximin@gmail.com" style="color:#79b5ff;">marlynemaximin@gmail.com</a>
         </p>
 
         <p>
