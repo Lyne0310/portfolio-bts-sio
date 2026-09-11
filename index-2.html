@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Portfolio professionnel de Marlyne Maximin — BTS SIO SLAM">
+<title>Marlyne OS — Portfolio BTS SIO SLAM</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#080a17;
+  --panel:rgba(18,20,42,.66);
+  --panel-strong:rgba(11,12,28,.94);
+  --line:rgba(255,255,255,.11);
+  --text:#f6f8ff;
+  --muted:#aab2cc;
+  --blue:#6aa2ff;
+  --violet:#b083ff;
+  --cyan:#7ce0ff;
+  --pink:#ff8fb3;
+  --shadow:0 25px 80px rgba(0,0,0,.45);
+  --radius:20px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;min-height:100vh;color:var(--text);
+  font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  overflow-x:hidden;
+}
+body.light-mode{ --panel:rgba(255,255,255,.14); --panel-strong:rgba(255,255,255,.22); --text:#fbfcff; --muted:#d9e0f2; }
+
+/* ---------- background: night sky sinking into a sunset horizon ---------- */
+.bg{position:fixed;inset:0;z-index:-5;overflow:hidden;pointer-events:none}
+.bg-sky{
+  position:absolute;inset:0;
+  background:linear-gradient(180deg,#05060f 0%,#0c1030 20%,#241a49 42%,#5c2f5f 62%,#a8456f 78%,#e2784f 92%,#f2a25c 100%);
+}
+.bg-stars{
+  position:absolute;inset:0 0 45% 0;
+  background-image:
+    radial-gradient(1.4px 1.4px at 8% 12%,#fff,transparent),
+    radial-gradient(1.2px 1.2px at 22% 28%,#fff,transparent),
+    radial-gradient(1.6px 1.6px at 35% 8%,#fff,transparent),
+    radial-gradient(1.1px 1.1px at 48% 22%,#fff,transparent),
+    radial-gradient(1.3px 1.3px at 63% 6%,#fff,transparent),
+    radial-gradient(1.5px 1.5px at 76% 18%,#fff,transparent),
+    radial-gradient(1.1px 1.1px at 88% 10%,#fff,transparent),
+    radial-gradient(1.4px 1.4px at 94% 26%,#fff,transparent),
+    radial-gradient(1.2px 1.2px at 15% 38%,#fff,transparent),
+    radial-gradient(1.3px 1.3px at 57% 34%,#fff,transparent),
+    radial-gradient(1.1px 1.1px at 70% 40%,#fff,transparent),
+    radial-gradient(1.2px 1.2px at 40% 44%,#fff,transparent);
+  background-repeat:no-repeat;opacity:.85;
+  animation:twinkle 5s ease-in-out infinite alternate;
+}
+@keyframes twinkle{0%{opacity:.55}100%{opacity:.95}}
+.bg-moon{
+  position:absolute;top:9%;right:13%;width:74px;height:74px;border-radius:50%;
+  background:radial-gradient(circle at 35% 32%,#fff,#ffe9c9 55%,#f3c88c 100%);
+  box-shadow:0 0 60px 18px rgba(255,220,170,.35);
+}
+.bg-mountains{position:absolute;left:0;right:0;bottom:14%;width:100%;height:34vh;min-height:220px}
+.bg-water{
+  position:absolute;left:0;right:0;bottom:0;height:16%;
+  background:linear-gradient(180deg,#2c1830,#170a1c 60%,#0a0612);
+}
+.bg-water:before{
+  content:"";position:absolute;left:50%;top:0;width:46%;height:100%;transform:translateX(-50%);
+  background:linear-gradient(180deg,rgba(242,162,92,.35),rgba(168,69,111,.12) 60%,transparent);
+  filter:blur(2px)
+}
+
+button{font:inherit}
+
+/* ---------- topbar ---------- */
+.topbar{
+  position:fixed;top:0;left:0;right:0;height:56px;z-index:1000;
+  display:flex;align-items:center;gap:22px;padding:0 24px;
+  background:rgba(8,9,20,.55);backdrop-filter:blur(22px);
+  border-bottom:1px solid var(--line)
+}
+.logo{display:flex;align-items:center;gap:9px;font-weight:700;letter-spacing:.2px;white-space:nowrap;font-size:15px}
+.logo .mark{font-size:17px}
+.menu{display:flex;gap:22px;font-size:13.5px;color:#cfd8ee;margin-left:6px}
+.menu span{cursor:pointer;transition:.2s;position:relative;padding-bottom:4px}
+.menu span:hover{color:#fff}
+.menu span.active{color:#fff}
+.menu span.active:after{content:"";position:absolute;left:0;right:0;bottom:-8px;height:2px;border-radius:2px;background:linear-gradient(90deg,var(--blue),var(--violet))}
+.search{
+  margin-left:auto;display:flex;align-items:center;gap:8px;padding:9px 14px;border-radius:999px;
+  background:rgba(255,255,255,.06);border:1px solid var(--line);color:var(--muted);width:220px
+}
+.search input{background:none;border:0;outline:0;color:var(--text);font-size:13px;width:100%}
+.search input::placeholder{color:#8a93b3}
+.time{font-size:13px;color:#dce6f8;white-space:nowrap;margin-left:18px}
+
+/* ---------- sidebar ---------- */
+.sidebar{
+  position:fixed;left:16px;top:76px;bottom:16px;width:92px;z-index:800;
+  display:flex;flex-direction:column;align-items:center;gap:6px;padding:14px 8px;
+  background:rgba(12,13,28,.5);border:1px solid var(--line);border-radius:26px;
+  backdrop-filter:blur(22px);box-shadow:var(--shadow)
+}
+.side-item{
+  width:100%;padding:8px 2px 10px;text-align:center;border-radius:16px;cursor:pointer;
+  transition:.2s;color:#c9d2ec
+}
+.side-item:hover{background:rgba(255,255,255,.06)}
+.side-item.active{background:rgba(255,255,255,.09)}
+.side-ico{
+  width:42px;height:42px;margin:0 auto 6px;border-radius:13px;display:grid;place-items:center;
+  font-size:18px;background:linear-gradient(145deg,#4a87f5,#8a5fe8);box-shadow:inset 0 1px rgba(255,255,255,.3)
+}
+.side-item:nth-child(2) .side-ico{background:linear-gradient(145deg,#ff8fb3,#b083ff)}
+.side-item:nth-child(3) .side-ico{background:linear-gradient(145deg,#7ce0ff,#4a87f5)}
+.side-item:nth-child(4) .side-ico{background:linear-gradient(145deg,#8a5fe8,#4a87f5)}
+.side-item:nth-child(5) .side-ico{background:linear-gradient(145deg,#4ad4b8,#4a87f5)}
+.side-item:nth-child(6) .side-ico{background:linear-gradient(145deg,#ffb35a,#ff6f91)}
+.side-item:nth-child(7) .side-ico{background:linear-gradient(145deg,#b083ff,#6a5cff)}
+.side-item:nth-child(8) .side-ico{background:linear-gradient(145deg,#7ce0ff,#7d70e8)}
+.side-label{font-size:10.5px;line-height:1.2;color:#c9d2ec}
+.side-toggle{margin-top:auto;display:flex;flex-direction:column;align-items:center;gap:6px;padding-top:12px;font-size:10px;color:#9aa4c4;cursor:pointer}
+.side-toggle .knob{width:34px;height:18px;border-radius:20px;background:rgba(255,255,255,.12);position:relative;transition:.2s}
+.side-toggle .knob:after{content:"";position:absolute;top:2px;left:2px;width:14px;height:14px;border-radius:50%;background:#fff;transition:.2s}
+body.light-mode .side-toggle .knob{background:linear-gradient(90deg,var(--blue),var(--violet))}
+body.light-mode .side-toggle .knob:after{left:18px}
+
+main{min-height:100vh;padding:96px 40px 210px 132px}
+
+/* ---------- macOS-style panel chrome ---------- */
+.panel{
+  border-radius:var(--radius);background:var(--panel);border:1px solid var(--line);
+  backdrop-filter:blur(22px);box-shadow:var(--shadow);overflow:hidden
+}
+.panel-bar{display:flex;align-items:center;gap:6px;padding:12px 14px}
+.panel-dot{width:10px;height:10px;border-radius:50%}
+.panel-dot.r{background:#ff5f57}.panel-dot.y{background:#febc2e}.panel-dot.g{background:#28c840}
+
+/* ---------- hero ---------- */
+.hero{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.05fr 1.15fr;gap:26px;align-items:stretch}
+.hero-photo-card{position:relative;display:flex;flex-direction:column}
+.hero-photo-card img{width:100%;flex:1;object-fit:cover;display:block;min-height:360px}
+.photo-caption{
+  position:absolute;left:22px;bottom:22px;font-family:"Caveat",cursive;font-size:30px;
+  line-height:1.15;color:#fff;text-shadow:0 3px 18px rgba(0,0,0,.55)
+}
+.photo-caption .heart{color:#ff8fb3}
+
+
+.hero-right{display:flex;flex-direction:column;gap:20px}
+.eyebrow{color:#9fc0ff;letter-spacing:2px;font-size:12.5px;font-weight:600}
+h1{margin:10px 0 0;font-size:clamp(46px,6vw,80px);line-height:.95;letter-spacing:-2.5px;font-weight:800}
+.gradient{
+  background:linear-gradient(90deg,#fff,#8ec2ff,#c9a8ff);
+  -webkit-background-clip:text;background-clip:text;color:transparent
+}
+.subtitle{font-size:15px;color:#a9b6d6;letter-spacing:1.5px;margin-top:14px}
+.description{max-width:520px;color:#c3cce4;line-height:1.7;font-size:15.5px;margin-top:6px}
+.buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:6px}
+.btn{border:0;color:#fff;padding:13px 20px;border-radius:14px;cursor:pointer;transition:.22s;font-size:14px;font-weight:600;display:inline-flex;align-items:center;gap:8px}
+.btn:hover{transform:translateY(-3px)}
+.primary{background:linear-gradient(135deg,#4a87f5,#8a5fe8);box-shadow:0 14px 32px rgba(90,120,255,.28)}
+.secondary{background:rgba(255,255,255,.07);border:1px solid var(--line)}
+.socials{display:flex;gap:10px;margin-top:4px}
+.social{
+  width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:rgba(255,255,255,.07);
+  border:1px solid var(--line);color:#dce4fb;text-decoration:none;transition:.2s
+}
+.social:hover{background:rgba(255,255,255,.14);transform:translateY(-2px)}
+
+.hero-widgets{display:grid;gap:14px;margin-top:4px}
+.widget-content{padding:16px 18px 18px}
+.widget-title{font-size:11.5px;color:#a9b9de;text-transform:uppercase;letter-spacing:1.3px;margin-bottom:2px}
+.wx-row{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.wx-date{font-size:12.5px;color:#9aa5c4;margin-bottom:2px}
+.wx-clock{font-size:30px;font-weight:700}
+.wx-temp{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:700}
+.wx-note{color:#8b96b8;font-size:12.5px;margin-top:2px}
+.music-row{display:flex;align-items:center;gap:12px}
+.music-icon{width:44px;height:44px;border-radius:13px;display:grid;place-items:center;background:linear-gradient(145deg,#5a91ff,#9479e8);font-size:19px;flex:none}
+.music-bar{height:4px;border-radius:4px;background:rgba(255,255,255,.14);margin-top:10px;overflow:hidden}
+.music-bar span{display:block;height:100%;width:58%;border-radius:inherit;background:linear-gradient(90deg,#5a91ff,#c98cff)}
+.music-times{display:flex;justify-content:space-between;font-size:11px;color:#8b96b8;margin-top:5px}
+.music-controls{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:10px}
+.music-controls button{background:none;border:0;color:#dfe6fb;font-size:16px;cursor:pointer}
+.music-controls .play{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#4a87f5,#8a5fe8);display:grid;place-items:center;color:#fff}
+.goal-row{display:flex;align-items:center;gap:10px;margin:10px 0;font-size:13.5px;color:#d6e1f0}
+.goal-row .ring{width:16px;height:16px;border-radius:50%;border:2px solid #6f8fd6;flex:none}
+.goal-row.done .ring{background:linear-gradient(135deg,#4a87f5,#8a5fe8);border-color:transparent}
+.goal-row.done{color:#8b96b8;text-decoration:line-through}
+
+/* ---------- terminal + quote row ---------- */
+.split-row{max-width:1280px;margin:26px auto 0;display:grid;grid-template-columns:1.5fr 1fr;gap:18px}
+.terminal-body{
+  padding:22px;font-family:"SFMono-Regular",Consolas,monospace;font-size:13.5px;
+  color:#8fe6c8;background:#050710
+}
+.terminal-body .white{color:#fff}
+.quote-card{display:flex;align-items:center;padding:26px 28px}
+.quote-card p{font-size:20px;line-height:1.5;color:#eef1ff;margin:0;font-style:italic}
+.quote-card .qline{width:34px;height:2px;background:linear-gradient(90deg,var(--blue),var(--violet));margin-top:14px;border-radius:2px}
+
+/* ---------- content sections (unchanged structure, refreshed tone) ---------- */
+.section{max-width:1280px;margin:110px auto 0}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:25px}
+.section-kicker{color:#9fc0ff;text-transform:uppercase;letter-spacing:2px;font-size:11px}
+.section-title{font-size:40px;margin:5px 0 0;letter-spacing:-1.5px;font-weight:800}
+.section-title span{color:var(--blue)}
+.section-intro{max-width:650px;color:var(--muted);line-height:1.7}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{padding:24px;border-radius:21px;background:var(--panel);border:1px solid var(--line);backdrop-filter:blur(18px);transition:.22s}
+.card:hover{transform:translateY(-5px);border-color:rgba(101,167,255,.38)}
+.card-icon{font-size:27px;margin-bottom:14px}
+.card h3{margin:0 0 8px;font-size:19px}
+.card p{margin:0;color:var(--muted);line-height:1.65;font-size:14px}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:15px}
+.tag{padding:6px 9px;border-radius:9px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.09);font-size:11px;color:#cbd8ea}
+.skills{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.skill{padding:18px;border-radius:18px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09)}
+.skill-top{display:flex;justify-content:space-between;gap:15px;margin-bottom:9px}
+.skill-name{font-weight:600}.level{color:#98a5c6;font-size:12px}
+.bar{height:7px;border-radius:20px;background:rgba(255,255,255,.09);overflow:hidden}
+.bar span{display:block;height:100%;width:0;border-radius:inherit;background:linear-gradient(90deg,#4a87f5,#b083ff);transition:width 1s ease}
+.timeline{position:relative;margin-top:12px}
+.timeline:before{content:"";position:absolute;left:13px;top:5px;bottom:5px;width:1px;background:rgba(150,180,255,.3)}
+.timeline-item{position:relative;padding:0 0 28px 42px}
+.timeline-dot{position:absolute;left:7px;top:4px;width:13px;height:13px;border-radius:50%;background:var(--blue);box-shadow:0 0 18px rgba(106,162,255,.55)}
+.timeline-year{color:#9fc0ff;font-size:12px;font-weight:700;letter-spacing:1px}
+.timeline h3{margin:5px 0}.timeline p{color:var(--muted);line-height:1.65;margin:0}
+.project{display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center;padding:22px;border-radius:20px;background:var(--panel);border:1px solid var(--line)}
+.project-badge{padding:8px 11px;border-radius:11px;background:rgba(112,150,255,.15);color:#b7d0ff;font-size:11px}
+.watch-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.watch{padding:20px;border-radius:19px;background:rgba(255,255,255,.05);border:1px solid var(--line)}
+.watch h3{margin:0 0 8px}.watch p{color:var(--muted);line-height:1.6;font-size:14px}
+.watch a{color:#a7c9ff;text-decoration:none;font-size:12px}
+.bts-box{padding:28px;border-radius:24px;background:linear-gradient(135deg,rgba(90,130,255,.14),rgba(176,131,255,.1));border:1px solid rgba(150,175,255,.22)}
+.bts-box p{color:#cfd8ec;line-height:1.75}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.contact-card{padding:22px;border-radius:20px;background:var(--panel);border:1px solid var(--line)}
+.contact-card strong{display:block;margin-bottom:7px}.contact-card span{color:var(--muted);font-size:14px}
+.contact-card a.email-link{color:var(--blue);text-decoration:none;font-size:14px}
+.contact-card a.email-link:hover{text-decoration:underline}
+.footer{max-width:1280px;margin:80px auto 20px;text-align:center;color:#8792b3;font-size:12px}
+
+/* ---------- plane card ---------- */
+.plane-card{
+  position:fixed;right:18px;bottom:112px;z-index:850;width:190px;padding:16px 18px;
+  background:var(--panel);border:1px solid var(--line);border-radius:18px;backdrop-filter:blur(20px);
+  box-shadow:var(--shadow);display:flex;align-items:center;gap:10px
+}
+.plane-card .icon{font-size:22px;transform:rotate(-18deg)}
+.plane-card p{margin:0;font-family:"Caveat",cursive;font-size:19px;line-height:1.15;color:#fff}
+.plane-card .heart{color:#ff8fb3}
+
+/* ---------- dock ---------- */
+.dock{
+  position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:900;
+  display:flex;gap:9px;padding:11px 15px;background:rgba(12,13,28,.6);
+  border:1px solid var(--line);border-radius:23px;backdrop-filter:blur(24px);
+  box-shadow:var(--shadow);max-width:calc(100% - 30px);overflow-x:auto
+}
+.dock-item{
+  width:47px;height:47px;min-width:44px;display:grid;place-items:center;border-radius:14px;
+  cursor:pointer;font-size:19px;transition:.2s;background:linear-gradient(145deg,#4a87f5,#8a5fe8)
+}
+.dock-item:nth-child(2){background:linear-gradient(145deg,#ff8fb3,#b083ff)}
+.dock-item:nth-child(3){background:linear-gradient(145deg,#7ce0ff,#4a87f5)}
+.dock-item:nth-child(4){background:linear-gradient(145deg,#8a5fe8,#4a87f5)}
+.dock-item:nth-child(5){background:linear-gradient(145deg,#4ad4b8,#4a87f5)}
+.dock-item:nth-child(6){background:linear-gradient(145deg,#ffb35a,#ff6f91)}
+.dock-item:nth-child(7){background:linear-gradient(145deg,#b083ff,#6a5cff)}
+.dock-item:nth-child(8){background:linear-gradient(145deg,#7ce0ff,#7d70e8)}
+.dock-item:hover{transform:translateY(-8px)}
+
+.overlay{position:fixed;inset:0;z-index:1500;display:none;background:rgba(0,0,0,.5);backdrop-filter:blur(4px)}
+.window{
+  position:fixed;left:50%;top:50%;transform:translate(-50%,-50%) scale(.96);
+  width:min(760px,calc(100% - 34px));max-height:82vh;overflow:auto;z-index:2000;
+  display:none;background:var(--panel-strong);border:1px solid rgba(255,255,255,.16);
+  border-radius:22px;box-shadow:0 35px 110px rgba(0,0,0,.7);backdrop-filter:blur(30px)
+}
+.window.open{display:block;animation:pop .2s forwards}
+@keyframes pop{to{transform:translate(-50%,-50%) scale(1)}}
+.window-header{position:sticky;top:0;display:flex;justify-content:space-between;align-items:center;padding:15px 18px;background:rgba(8,9,20,.92);border-bottom:1px solid var(--line)}
+.window-buttons{display:flex;gap:7px}
+.close{cursor:pointer;color:#ccd7e8;font-size:20px}
+.window-content{padding:30px}.window-content h2{font-size:34px;margin:0 0 15px}
+.window-content p,.window-content li{color:#bdc9d9;line-height:1.7}
+.window-content li{margin:8px 0}
+
+@media(max-width:980px){
+  .hero{grid-template-columns:1fr}
+  .split-row{grid-template-columns:1fr}
+  .plane-card{display:none}
+}
+@media(max-width:900px){
+  .menu,.search{display:none}
+  .sidebar{width:68px}
+  .side-label{display:none}
+  main{padding:96px 20px 210px 100px}
+  .cards,.watch-grid{grid-template-columns:1fr}.skills{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .topbar{padding:0 12px}.time{display:none}
+  .sidebar{display:none}
+  main{padding:96px 16px 190px}
+  h1{font-size:52px;letter-spacing:-2px}
+  .project,.contact{grid-template-columns:1fr}
+  .window-content{padding:22px}
+}
+</style>
+</head>
+<body>
+
+<div class="bg">
+  <div class="bg-sky"></div>
+  <div class="bg-stars"></div>
+  <div class="bg-moon"></div>
+  <svg class="bg-mountains" viewBox="0 0 1440 400" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <polygon points="0,400 0,220 180,120 340,210 520,90 700,200 900,110 1080,220 1260,140 1440,230 1440,400" fill="#241938" opacity=".55"/>
+    <polygon points="0,400 0,280 220,190 420,270 640,170 860,260 1080,180 1260,270 1440,200 1440,400" fill="#150e26" opacity=".8"/>
+  </svg>
+  <div class="bg-water"></div>
+</div>
+
+<header class="topbar">
+  <div class="logo"><span class="mark"></span> Marlyne OS</div>
+  <nav class="menu" id="topMenu">
+    <span onclick="goHome()" class="active">Accueil</span>
+    <span onclick="openWindow('about-window')">À propos</span>
+    <span onclick="openWindow('skills-window')">Compétences</span>
+    <span onclick="openWindow('projects-window')">Projets</span>
+    <span onclick="openWindow('watch-window')">Veille</span>
+    <span onclick="openWindow('bts-window')">BTS SIO</span>
+    <span onclick="openWindow('experience-window')">Expériences</span>
+    <span onclick="openWindow('contact-window')">Contact</span>
+  </nav>
+  <div class="search">
+    <span>⌕</span>
+    <input id="searchInput" type="text" placeholder="Rechercher…" onkeydown="if(event.key==='Enter')runSearch()">
+  </div>
+  <div class="time" id="topTime">--:--</div>
+</header>
+
+<aside class="sidebar" id="sidebar">
+  <div class="side-item active" onclick="goHome()"><div class="side-ico">⌂</div><div class="side-label">Accueil</div></div>
+  <div class="side-item" onclick="openWindow('about-window')"><div class="side-ico">👤</div><div class="side-label">À propos</div></div>
+  <div class="side-item" onclick="openWindow('skills-window')"><div class="side-ico">⌘</div><div class="side-label">Compétences</div></div>
+  <div class="side-item" onclick="openWindow('projects-window')"><div class="side-ico">▣</div><div class="side-label">Projets</div></div>
+  <div class="side-item" onclick="openWindow('watch-window')"><div class="side-ico">◉</div><div class="side-label">Veille</div></div>
+  <div class="side-item" onclick="openWindow('bts-window')"><div class="side-ico">🎓</div><div class="side-label">BTS SIO</div></div>
+  <div class="side-item" onclick="openWindow('experience-window')"><div class="side-ico">💼</div><div class="side-label">Expériences</div></div>
+  <div class="side-item" onclick="openWindow('contact-window')"><div class="side-ico">✉</div><div class="side-label">Contact</div></div>
+  <div class="side-toggle" onclick="toggleMode()"><div class="knob"></div>Mode clair</div>
+</aside>
+
+<main id="home">
+<section class="hero">
+  <div class="hero-photo-card panel">
+    <div class="panel-bar"><span class="panel-dot r"></span><span class="panel-dot y"></span><span class="panel-dot g"></span></div>
+    <img src="marlyne.png" alt="Portrait de Marlyne Maximin">
+  </div>
+
+  <div class="hero-right">
+    <div>
+      <div class="eyebrow">DÉVELOPPEUSE EN DEVENIR</div>
+      <h1>Marlyne<br><span class="gradient">OS</span></h1>
+      <div class="subtitle">ÉTUDIANTE EN BTS SIO — OPTION SLAM</div>
+      <p class="description">
+        En reconversion vers l'informatique, je développe progressivement mes compétences
+        en programmation et en environnement numérique, avec l'envie de construire un
+        parcours professionnel ouvert sur le monde.
+      </p>
+      <div class="buttons">
+        <button class="btn primary" onclick="openWindow('about-window')">Découvrir mon univers →</button>
+        <button class="btn secondary" onclick="openWindow('projects-window')">Voir mes projets</button>
+      </div>
+      <div class="socials">
+        <a class="social" href="https://github.com/Lyne0310/portfolio-bts-sio" target="_blank" rel="noopener" title="GitHub">⌥</a>
+        <a class="social" href="mailto:marlynemaximin@gmail.com" title="Email">✉</a>
+      </div>
+    </div>
+
+    <div class="hero-widgets">
+      <div class="panel">
+        <div class="panel-bar"><span class="panel-dot r"></span><span class="panel-dot y"></span><span class="panel-dot g"></span></div>
+        <div class="widget-content">
+          <div class="wx-row">
+            <div>
+              <div class="wx-date" id="dateLabel">Chargement de la date…</div>
+              <div class="wx-clock" id="bigClock">--:--</div>
+              <div class="wx-note">Une nouvelle journée, de nouvelles opportunités.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel-bar"><span class="panel-dot r"></span><span class="panel-dot y"></span><span class="panel-dot g"></span></div>
+        <div class="widget-content">
+          <div class="music-row">
+            <div class="music-icon">♫</div>
+            <div><strong>Good Ideas Better Code</strong><br><small class="wx-note">Mode concentration · portfolio</small></div>
+          </div>
+          <div class="music-bar"><span></span></div>
+          <div class="music-times"><span>1:18</span><span>-1:02</span></div>
+          <div class="music-controls">
+            <button onclick="return false">⏮</button>
+            <button class="play" id="playBtn" onclick="toggleMusic()">⏸</button>
+            <button onclick="return false">⏭</button>
+          </div>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel-bar"><span class="panel-dot r"></span><span class="panel-dot y"></span><span class="panel-dot g"></span></div>
+        <div class="widget-content">
+          <div class="widget-title">Mes objectifs</div>
+          <div class="goal-row done"><span class="ring"></span>Obtenir mon BTS SIO (SLAM)</div>
+          <div class="goal-row"><span class="ring"></span>Développer mes compétences</div>
+          <div class="goal-row"><span class="ring"></span>Réaliser des projets concrets</div>
+          <div class="goal-row"><span class="ring"></span>Évoluer vers un métier qui me permet de voyager</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="split-row">
+  <div class="panel terminal">
+    <div class="panel-bar"><span class="panel-dot r"></span><span class="panel-dot y"></span><span class="panel-dot g"></span></div>
+    <div class="terminal-body">
+      <div><span class="white">marlyne@MarlyneOS:~$</span> whoami</div>
+      <div>Développeuse en devenir</div>
+      <div>&nbsp;</div>
+      <div><span class="white">marlyne@MarlyneOS:~$</span> status</div>
+      <div>Curieuse · Motivée · Créative · Déterminée</div>
+      <div>&nbsp;</div>
+      <div><span class="white">marlyne@MarlyneOS:~$</span> <span id="cursor">▍</span></div>
+    </div>
+  </div>
+  <div class="panel quote-card">
+    <div>
+      <p>"Discipline aujourd'hui,<br>la liberté demain."</p>
+      <div class="qline"></div>
+    </div>
+  </div>
+</div>
+
+<section class="section" id="about">
+  <div class="section-head">
+    <div><div class="section-kicker">01 · Profil</div><h2 class="section-title">À <span>propos</span></h2></div>
+  </div>
+  <p class="section-intro">
+    Mon parcours associe une première expérience professionnelle dans l'esthétique,
+    le management et l'accueil à une nouvelle orientation vers l'informatique.
+    Cette reconversion m'amène aujourd'hui à développer une nouvelle expertise tout
+    en conservant les qualités humaines et organisationnelles acquises auparavant.
+  </p>
+  <div class="cards">
+    <article class="card"><div class="card-icon">🎓</div><h3>Formation</h3><p>DAEU option A obtenu en 2025/2026. Je poursuis actuellement un BTS SIO, option SLAM.</p><div class="tags"><span class="tag">DAEU A</span><span class="tag">BTS SIO</span><span class="tag">SLAM</span></div></article>
+    <article class="card"><div class="card-icon">🔄</div><h3>Reconversion</h3><p>Après une formation et des expériences dans l'esthétique, le spa, la vente, la restauration et l'accueil, je me réoriente vers l'informatique.</p><div class="tags"><span class="tag">Adaptation</span><span class="tag">Autonomie</span><span class="tag">Organisation</span></div></article>
+    <article class="card"><div class="card-icon">🌍</div><h3>Vision</h3><p>Je souhaite construire un parcours qui combine compétences numériques, évolution professionnelle et ouverture sur le monde.</p><div class="tags"><span class="tag">Digital</span><span class="tag">Créativité</span><span class="tag">International</span></div></article>
+  </div>
+</section>
+
+<section class="section" id="skills">
+  <div class="section-head">
+    <div><div class="section-kicker">02 · Savoir-faire</div><h2 class="section-title">Compé<span>tences</span></h2></div>
+  </div>
+  <p class="section-intro">Des compétences en construction, présentées honnêtement selon mon niveau actuel d'apprentissage.</p>
+  <div class="skills">
+    <div class="skill"><div class="skill-top"><span class="skill-name">HTML</span><span class="level">bases</span></div><div class="bar"><span data-width="45%"></span></div></div>
+    <div class="skill"><div class="skill-top"><span class="skill-name">CSS</span><span class="level">bases</span></div><div class="bar"><span data-width="35%"></span></div></div>
+    <div class="skill"><div class="skill-top"><span class="skill-name">JavaScript</span><span class="level">débutant</span></div><div class="bar"><span data-width="15%"></span></div></div>
+    <div class="skill"><div class="skill-top"><span class="skill-name">PHP</span><span class="level">débutant</span></div><div class="bar"><span data-width="10%"></span></div></div>
+    <div class="skill"><div class="skill-top"><span class="skill-name">SQL / MySQL</span><span class="level">débutant</span></div><div class="bar"><span data-width="10%"></span></div></div>
+    <div class="skill"><div class="skill-top"><span class="skill-name">Git / GitHub</span><span class="level">en apprentissage</span></div><div class="bar"><span data-width="25%"></span></div></div>
+  </div>
+  <div class="cards" style="margin-top:15px">
+    <article class="card"><div class="card-icon">🧰</div><h3>Outils bureautiques</h3><p>Word, Excel et PowerPoint · utilisation générale.</p></article>
+    <article class="card"><div class="card-icon">🌐</div><h3>Langues</h3><p>Anglais : niveau intermédiaire · Espagnol : niveau scolaire.</p></article>
+    <article class="card"><div class="card-icon">✨</div><h3>Qualités professionnelles</h3><p>Organisation, gestion d'équipe, planification, accueil et adaptation développés grâce à mes expériences professionnelles.</p></article>
+  </div>
+</section>
+
+<section class="section" id="projects">
+  <div class="section-head">
+    <div><div class="section-kicker">03 · Réalisations</div><h2 class="section-title">Mes <span>projets</span></h2></div>
+  </div>
+  <div class="project">
+    <div>
+      <div class="project-badge">Projet actuel · Portfolio</div>
+      <h3>Portfolio professionnel — Marlyne OS</h3>
+      <p class="section-intro">
+        Création d'un portfolio web personnel pour présenter mon parcours, mes compétences,
+        ma formation BTS SIO SLAM et mes futures réalisations. Le site utilise HTML, CSS et JavaScript
+        et est publié avec GitHub Pages.
+      </p>
+      <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">GitHub Pages</span></div>
+    </div>
+    <div class="project-badge">En cours d'évolution</div>
+  </div>
+  <div class="card" style="margin-top:15px">
+    <div class="card-icon">＋</div><h3>Prochains projets</h3>
+    <p>Cette zone sera enrichie au fil de ma formation avec mes réalisations BTS SIO : exercices, applications, bases de données et projets personnels.</p>
+  </div>
+</section>
+
+<section class="section" id="watch">
+  <div class="section-head">
+    <div><div class="section-kicker">04 · Apprendre & anticiper</div><h2 class="section-title">Veille <span>technologique</span></h2></div>
+  </div>
+  <p class="section-intro">Ma veille a pour objectif de suivre les évolutions qui peuvent enrichir ma formation et ma future pratique du développement.</p>
+  <div class="watch-grid">
+    <article class="watch"><h3>💻 Développement web</h3><p>Suivre les évolutions des standards web, des outils de développement et des bonnes pratiques.</p><a href="https://developer.mozilla.org/fr/" target="_blank" rel="noopener">MDN Web Docs ↗</a></article>
+    <article class="watch"><h3>🤖 Intelligence artificielle</h3><p>Observer l'évolution des outils d'IA et leur impact sur les usages numériques et le métier de développeur.</p><a href="https://www.cnil.fr/fr/intelligence-artificielle" target="_blank" rel="noopener">CNIL · IA ↗</a></article>
+    <article class="watch"><h3>🔐 Cybersécurité</h3><p>Découvrir les risques, les bonnes pratiques et les ressources utiles pour développer des applications plus sûres.</p><a href="https://owasp.org/" target="_blank" rel="noopener">OWASP ↗</a></article>
+  </div>
+</section>
+
+<section class="section" id="bts">
+  <div class="section-head">
+    <div><div class="section-kicker">05 · Formation actuelle</div><h2 class="section-title">BTS SIO <span>SLAM</span></h2></div>
+  </div>
+  <div class="bts-box">
+    <p>
+      Le BTS Services Informatiques aux Organisations me permet de construire des compétences
+      professionnelles dans le domaine informatique. En option SLAM, je m'intéresse particulièrement
+      au développement de solutions logicielles et d'applications, tout en progressant sur les bases
+      de données, le web et les outils nécessaires au travail d'un développeur.
+    </p>
+    <div class="tags"><span class="tag">Développement</span><span class="tag">Applications</span><span class="tag">Bases de données</span><span class="tag">Projet</span></div>
+  </div>
+</section>
+
+<section class="section" id="experience">
+  <div class="section-head">
+    <div><div class="section-kicker">06 · Parcours professionnel</div><h2 class="section-title">Expé<span>riences</span></h2></div>
+  </div>
+  <div class="timeline">
+    <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-year">EXPÉRIENCE PROFESSIONNELLE</div><h3>Spa Manager</h3><p>Responsabilités de management d'équipe, planning, caisse, promotions et participation à la gestion du menu des soins.</p></div>
+    <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-year">FORMATION</div><h3>CAP Esthétique Cosmétique et Parfumerie</h3><p>Formation obtenue en alternance, première étape de mon parcours professionnel.</p></div>
+    <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-year">AUTRES EXPÉRIENCES</div><h3>Restauration · Vente · Accueil</h3><p>Des expériences variées qui m'ont permis de développer le sens du service, l'adaptation, l'organisation et le contact avec le public.</p></div>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="section-head">
+    <div><div class="section-kicker">07 · Me retrouver</div><h2 class="section-title">Con<span>tact</span></h2></div>
+  </div>
+  <div class="contact">
+    <div class="contact-card"><strong>GitHub</strong><span>Mes projets et mon évolution technique sont disponibles sur mon profil GitHub.</span><div style="margin-top:12px"><a class="btn secondary" style="display:inline-block;text-decoration:none" href="https://github.com/Lyne0310/portfolio-bts-sio" target="_blank" rel="noopener">Voir le dépôt ↗</a></div></div>
+    <div class="contact-card"><strong>Email</strong><span>Tu peux me contacter directement par email.</span><div style="margin-top:12px"><a class="email-link" href="mailto:marlynemaximin@gmail.com">marlynemaximin@gmail.com</a></div></div>
+  </div>
+</section>
+
+<div class="footer">© <span id="year"></span> Marlyne Maximin · Portfolio BTS SIO SLAM</div>
+</main>
+
+<div class="plane-card"><span class="icon">✈</span><p>Same girl<br>Bigger dreams <span class="heart">♥</span></p></div>
+
+<nav class="dock">
+  <div class="dock-item" onclick="goHome()" title="Accueil">⌂</div>
+  <div class="dock-item" onclick="openWindow('about-window')" title="À propos">👤</div>
+  <div class="dock-item" onclick="openWindow('skills-window')" title="Compétences">⌘</div>
+  <div class="dock-item" onclick="openWindow('projects-window')" title="Projets">▣</div>
+  <div class="dock-item" onclick="openWindow('watch-window')" title="Veille">◉</div>
+  <div class="dock-item" onclick="openWindow('bts-window')" title="BTS SIO">🎓</div>
+  <div class="dock-item" onclick="openWindow('experience-window')" title="Expériences">💼</div>
+  <div class="dock-item" onclick="openWindow('contact-window')" title="Contact">✉</div>
+</nav>
+
+<div class="overlay" id="overlay" onclick="closeWindows()"></div>
+
+<div class="window" id="about-window">
+  <div class="window-header"><div class="window-buttons"><span class="panel-dot r"></span><span class="panel-dot y"></span><span class="panel-dot g"></span></div><span class="close" onclick="closeWindows()">×</span></div>
+  <div class="window-content"><h2>Mon parcours</h2>
+    <p>Après un parcours dans l'esthétique, le spa, la vente, la restauration et l'accueil, j'ai choisi de me reconvertir vers l'informatique.</p>
+    <p>J'ai obtenu le DAEU option A en 2025/2026 et je poursuis aujourd'hui un BTS SIO option SLAM. Mon objectif est de progresser pas à pas dans le développement et de construire un projet professionnel qui associe compétences numériques et ouverture sur le monde.</p>
+  </div>
+</div>
+
+<div class="window" id="skills-window">
+  <div class="window-header"><div class="window-buttons"><span class="panel-dot r"></span><span class="panel-dot y"></span><span class="panel-dot g"></span></div><span class="close" onclick="closeWindows()">×</span></div>
+  <div class="window-content"><h2>Mes compétences</h2>
+    <p>Des compétences en construction, présentées honnêtement selon mon niveau actuel d'apprentissage.</p>
+    <ul>
+      <li>HTML — bases</li>
+      <li>CSS — bases</li>
+      <li>JavaScript — débutant</li>
+      <li>PHP — débutant</li>
+      <li>SQL / MySQL — débutant</li>
+      <li>Git / GitHub — en apprentissage</li>
+    </ul>
+    <p>Outils bureautiques : Word, Excel, PowerPoint. Langues : anglais intermédiaire, espagnol scolaire.</p>
+  </div>
+</div>
+
+<div class="window" id="projects-window">
+  <div class="window-header"><div class="window-buttons"><span class="panel-dot r"></span><span class="panel-dot y"></span><span class="panel-dot g"></span></div><span class="close" onclick="closeWindows()">×</span></div>
+  <div class="window-content"><h2>Mes projets</h2>
+    <p><strong>Portfolio professionnel — Marlyne OS</strong><br>Création d'un portfolio web personnel en HTML, CSS et JavaScript, publié avec GitHub Pages.</p>
+    <p>D'autres projets viendront enrichir cette section au fil de ma formation BTS SIO : exercices, applications, bases de données.</p>
+  </div>
+</div>
+
+<div class="window" id="watch-window">
+  <div class="window-header"><div class="window-buttons"><span class="panel-dot r"></span><span class="panel-dot y"></span><span class="panel-dot g"></span></div><span class="close" onclick="closeWindows()">×</span></div>
+  <div class="window-content"><h2>Veille technologique</h2>
+    <ul>
+      <li>💻 Développement web — <a href="https://developer.mozilla.org/fr/" target="_blank" rel="noopener" style="color:#a7c9ff">MDN Web Docs ↗</a></li>
+      <li>🤖 Intelligence artificielle — <a href="https://www.cnil.fr/fr/intelligence-artificielle" target="_blank" rel="noopener" style="color:#a7c9ff">CNIL · IA ↗</a></li>
+      <li>🔐 Cybersécurité — <a href="https://owasp.org/" target="_blank" rel="noopener" style="color:#a7c9ff">OWASP ↗</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="window" id="bts-window">
+  <div class="window-header"><div class="window-buttons"><span class="panel-dot r"></span><span class="panel-dot y"></span><span class="panel-dot g"></span></div><span class="close" onclick="closeWindows()">×</span></div>
+  <div class="window-content"><h2>BTS SIO · SLAM</h2>
+    <p>Je suis actuellement en BTS Services Informatiques aux Organisations, option SLAM (Solutions Logicielles et Applications Métiers).</p>
+    <ul><li>Développement et programmation</li><li>Conception et évolution d'applications</li><li>Bases de données</li><li>Environnement web et outils de développement</li></ul>
+    <p>Ce portfolio évoluera avec les compétences et projets réalisés pendant ma formation.</p>
+  </div>
+</div>
+
+<div class="window" id="experience-window">
+  <div class="window-header"><div class="window-buttons"><span class="panel-dot r"></span><span class="panel-dot y"></span><span class="panel-dot g"></span></div><span class="close" onclick="closeWindows()">×</span></div>
+  <div class="window-content"><h2>Mes expériences</h2>
+    <p><strong>Spa Manager</strong><br>Responsabilités de management d'équipe, planning, caisse, promotions et participation à la gestion du menu des soins.</p>
+    <p><strong>CAP Esthétique Cosmétique et Parfumerie</strong><br>Formation obtenue en alternance, première étape de mon parcours professionnel.</p>
+    <p><strong>Restauration · Vente · Accueil</strong><br>Des expériences variées qui m'ont permis de développer le sens du service, l'adaptation, l'organisation et le contact avec le public.</p>
+  </div>
+</div>
+
+<div class="window" id="contact-window">
+  <div class="window-header"><div class="window-buttons"><span class="panel-dot r"></span><span class="panel-dot y"></span><span class="panel-dot g"></span></div><span class="close" onclick="closeWindows()">×</span></div>
+  <div class="window-content"><h2>Me contacter</h2>
+    <p><strong>Email</strong><br><a href="mailto:marlynemaximin@gmail.com" style="color:#a7c9ff">marlynemaximin@gmail.com</a></p>
+    <p><strong>GitHub</strong><br><a href="https://github.com/Lyne0310/portfolio-bts-sio" target="_blank" rel="noopener" style="color:#a7c9ff">Voir le dépôt ↗</a></p>
+  </div>
+</div>
+
+<script>
+const sectionMap={
+  home:{type:"home"},
+  accueil:{type:"home"},
+  about:{type:"window",id:"about-window"},
+  propos:{type:"window",id:"about-window"},
+  skills:{type:"window",id:"skills-window"},
+  competences:{type:"window",id:"skills-window"},
+  "compétences":{type:"window",id:"skills-window"},
+  projects:{type:"window",id:"projects-window"},
+  projets:{type:"window",id:"projects-window"},
+  watch:{type:"window",id:"watch-window"},
+  veille:{type:"window",id:"watch-window"},
+  bts:{type:"window",id:"bts-window"},
+  sio:{type:"window",id:"bts-window"},
+  experience:{type:"window",id:"experience-window"},
+  "expériences":{type:"window",id:"experience-window"},
+  contact:{type:"window",id:"contact-window"},
+  email:{type:"window",id:"contact-window"}
+};
+
+function setActiveNav(el){
+  document.querySelectorAll(".menu span").forEach(s=>s.classList.remove("active"));
+  document.querySelectorAll(".side-item").forEach(s=>s.classList.remove("active"));
+}
+document.querySelectorAll(".menu span").forEach((el,i)=>{
+  el.addEventListener("click",()=>{
+    document.querySelectorAll(".menu span").forEach(s=>s.classList.remove("active"));
+    el.classList.add("active");
+  });
+});
+document.querySelectorAll(".side-item").forEach((el)=>{
+  el.addEventListener("click",()=>{
+    document.querySelectorAll(".side-item").forEach(s=>s.classList.remove("active"));
+    el.classList.add("active");
+  });
+});
+
+function goHome(){
+  window.scrollTo({top:0,behavior:"smooth"});
+  closeWindows();
+}
+function openWindow(id){
+  closeWindows();
+  const w=document.getElementById(id), o=document.getElementById("overlay");
+  if(w){w.classList.add("open");o.style.display="block"}
+}
+function closeWindows(){
+  document.querySelectorAll(".window").forEach(w=>w.classList.remove("open"));
+  document.getElementById("overlay").style.display="none";
+}
+function runSearch(){
+  const q=document.getElementById("searchInput").value.trim().toLowerCase()
+    .normalize("NFD").replace(/[\u0300-\u036f]/g,"");
+  for(const key in sectionMap){
+    if(q.includes(key)){
+      const target=sectionMap[key];
+      if(target.type==="home") goHome(); else openWindow(target.id);
+      return;
+    }
+  }
+}
+function toggleMode(){
+  document.body.classList.toggle("light-mode");
+  const label=document.querySelector(".side-toggle");
+  label.lastChild.textContent=document.body.classList.contains("light-mode")?" Mode sombre":" Mode clair";
+}
+let musicPlaying=true;
+function toggleMusic(){
+  musicPlaying=!musicPlaying;
+  document.getElementById("playBtn").textContent=musicPlaying?"⏸":"▶";
+}
+function updateClock(){
+  const now=new Date();
+  const time=now.toLocaleTimeString("fr-FR",{hour:"2-digit",minute:"2-digit",second:"2-digit"});
+  const date=now.toLocaleDateString("fr-FR",{weekday:"long",day:"numeric",month:"long",year:"numeric"});
+  document.getElementById("topTime").textContent=time.slice(0,5);
+  document.getElementById("bigClock").textContent=time.slice(0,5);
+  document.getElementById("dateLabel").textContent=date.charAt(0).toUpperCase()+date.slice(1);
+}
+function animateSkills(){
+  document.querySelectorAll(".bar span").forEach(s=>s.style.width=s.dataset.width);
+}
+document.getElementById("year").textContent=new Date().getFullYear();
+updateClock();setInterval(updateClock,1000);
+window.addEventListener("load",()=>setTimeout(animateSkills,250));
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeWindows()});
+setInterval(()=>{const c=document.getElementById("cursor");if(c)c.style.visibility=c.style.visibility==="hidden"?"visible":"hidden"},500);
+</script>
+</body>
+</html>
