@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -142,12 +143,6 @@ main{min-height:100vh;padding:96px 40px 210px 132px}
 .hero{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.05fr 1.15fr;gap:26px;align-items:stretch}
 .hero-photo-card{position:relative;display:flex;flex-direction:column}
 .hero-photo-card img{width:100%;flex:1;object-fit:cover;display:block;min-height:360px}
-.photo-caption{
-  position:absolute;left:22px;bottom:22px;font-family:"Caveat",cursive;font-size:30px;
-  line-height:1.15;color:#fff;text-shadow:0 3px 18px rgba(0,0,0,.55)
-}
-.photo-caption .heart{color:#ff8fb3}
-
 
 .hero-right{display:flex;flex-direction:column;gap:20px}
 .eyebrow{color:#9fc0ff;letter-spacing:2px;font-size:12.5px;font-weight:600}
@@ -159,10 +154,11 @@ h1{margin:10px 0 0;font-size:clamp(46px,6vw,80px);line-height:.95;letter-spacing
 .subtitle{font-size:15px;color:#a9b6d6;letter-spacing:1.5px;margin-top:14px}
 .description{max-width:520px;color:#c3cce4;line-height:1.7;font-size:15.5px;margin-top:6px}
 .buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:6px}
-.btn{border:0;color:#fff;padding:13px 20px;border-radius:14px;cursor:pointer;transition:.22s;font-size:14px;font-weight:600;display:inline-flex;align-items:center;gap:8px}
+.btn{border:0;color:#fff;padding:13px 20px;border-radius:14px;cursor:pointer;transition:.22s;font-size:14px;font-weight:600;display:inline-flex;align-items:center;gap:8px;text-decoration:none}
 .btn:hover{transform:translateY(-3px)}
 .primary{background:linear-gradient(135deg,#4a87f5,#8a5fe8);box-shadow:0 14px 32px rgba(90,120,255,.28)}
 .secondary{background:rgba(255,255,255,.07);border:1px solid var(--line)}
+.ghost{background:rgba(255,255,255,.04);border:1px dashed var(--line);color:#dce4fb}
 .socials{display:flex;gap:10px;margin-top:4px}
 .social{
   width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:rgba(255,255,255,.07);
@@ -176,7 +172,6 @@ h1{margin:10px 0 0;font-size:clamp(46px,6vw,80px);line-height:.95;letter-spacing
 .wx-row{display:flex;align-items:center;justify-content:space-between;gap:10px}
 .wx-date{font-size:12.5px;color:#9aa5c4;margin-bottom:2px}
 .wx-clock{font-size:30px;font-weight:700}
-.wx-temp{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:700}
 .wx-note{color:#8b96b8;font-size:12.5px;margin-top:2px}
 .music-row{display:flex;align-items:center;gap:12px}
 .music-icon{width:44px;height:44px;border-radius:13px;display:grid;place-items:center;background:linear-gradient(145deg,#5a91ff,#9479e8);font-size:19px;flex:none}
@@ -202,7 +197,7 @@ h1{margin:10px 0 0;font-size:clamp(46px,6vw,80px);line-height:.95;letter-spacing
 .quote-card p{font-size:20px;line-height:1.5;color:#eef1ff;margin:0;font-style:italic}
 .quote-card .qline{width:34px;height:2px;background:linear-gradient(90deg,var(--blue),var(--violet));margin-top:14px;border-radius:2px}
 
-/* ---------- content sections (unchanged structure, refreshed tone) ---------- */
+/* ---------- content sections ---------- */
 .section{max-width:1280px;margin:110px auto 0}
 .section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:25px}
 .section-kicker{color:#9fc0ff;text-transform:uppercase;letter-spacing:2px;font-size:11px}
@@ -237,7 +232,7 @@ h1{margin:10px 0 0;font-size:clamp(46px,6vw,80px);line-height:.95;letter-spacing
 .watch a{color:#a7c9ff;text-decoration:none;font-size:12px}
 .bts-box{padding:28px;border-radius:24px;background:linear-gradient(135deg,rgba(90,130,255,.14),rgba(176,131,255,.1));border:1px solid rgba(150,175,255,.22)}
 .bts-box p{color:#cfd8ec;line-height:1.75}
-.contact{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.contact{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
 .contact-card{padding:22px;border-radius:20px;background:var(--panel);border:1px solid var(--line)}
 .contact-card strong{display:block;margin-bottom:7px}.contact-card span{color:var(--muted);font-size:14px}
 .contact-card a.email-link{color:var(--blue);text-decoration:none;font-size:14px}
@@ -272,6 +267,7 @@ h1{margin:10px 0 0;font-size:clamp(46px,6vw,80px);line-height:.95;letter-spacing
 .dock-item:nth-child(6){background:linear-gradient(145deg,#ffb35a,#ff6f91)}
 .dock-item:nth-child(7){background:linear-gradient(145deg,#b083ff,#6a5cff)}
 .dock-item:nth-child(8){background:linear-gradient(145deg,#7ce0ff,#7d70e8)}
+.dock-item:nth-child(9){background:linear-gradient(145deg,#ffd27a,#ff8a5c)}
 .dock-item:hover{transform:translateY(-8px)}
 
 .overlay{position:fixed;inset:0;z-index:1500;display:none;background:rgba(0,0,0,.5);backdrop-filter:blur(4px)}
@@ -294,6 +290,7 @@ h1{margin:10px 0 0;font-size:clamp(46px,6vw,80px);line-height:.95;letter-spacing
   .hero{grid-template-columns:1fr}
   .split-row{grid-template-columns:1fr}
   .plane-card{display:none}
+  .contact{grid-template-columns:1fr}
 }
 @media(max-width:900px){
   .menu,.search{display:none}
@@ -376,6 +373,7 @@ h1{margin:10px 0 0;font-size:clamp(46px,6vw,80px);line-height:.95;letter-spacing
       <div class="buttons">
         <button class="btn primary" onclick="openWindow('about-window')">Découvrir mon univers →</button>
         <button class="btn secondary" onclick="openWindow('projects-window')">Voir mes projets</button>
+        <a class="btn ghost" href="CV_Marlyne_Maximin.pdf" download>⬇ Télécharger mon CV</a>
       </div>
       <div class="socials">
         <a class="social" href="https://github.com/Lyne0310/portfolio-bts-sio" target="_blank" rel="noopener" title="GitHub">⌥</a>
@@ -552,6 +550,7 @@ h1{margin:10px 0 0;font-size:clamp(46px,6vw,80px);line-height:.95;letter-spacing
   <div class="contact">
     <div class="contact-card"><strong>GitHub</strong><span>Mes projets et mon évolution technique sont disponibles sur mon profil GitHub.</span><div style="margin-top:12px"><a class="btn secondary" style="display:inline-block;text-decoration:none" href="https://github.com/Lyne0310/portfolio-bts-sio" target="_blank" rel="noopener">Voir le dépôt ↗</a></div></div>
     <div class="contact-card"><strong>Email</strong><span>Tu peux me contacter directement par email.</span><div style="margin-top:12px"><a class="email-link" href="mailto:marlynemaximin@gmail.com">marlynemaximin@gmail.com</a></div></div>
+    <div class="contact-card"><strong>CV</strong><span>Télécharge mon CV complet au format PDF.</span><div style="margin-top:12px"><a class="btn secondary" style="display:inline-block;text-decoration:none" href="CV_Marlyne_Maximin.pdf" download>⬇ Télécharger le CV</a></div></div>
   </div>
 </section>
 
@@ -569,6 +568,7 @@ h1{margin:10px 0 0;font-size:clamp(46px,6vw,80px);line-height:.95;letter-spacing
   <div class="dock-item" onclick="openWindow('bts-window')" title="BTS SIO">🎓</div>
   <div class="dock-item" onclick="openWindow('experience-window')" title="Expériences">💼</div>
   <div class="dock-item" onclick="openWindow('contact-window')" title="Contact">✉</div>
+  <a class="dock-item" href="CV_Marlyne_Maximin.pdf" download title="Télécharger le CV">⬇</a>
 </nav>
 
 <div class="overlay" id="overlay" onclick="closeWindows()"></div>
@@ -639,6 +639,7 @@ h1{margin:10px 0 0;font-size:clamp(46px,6vw,80px);line-height:.95;letter-spacing
   <div class="window-content"><h2>Me contacter</h2>
     <p><strong>Email</strong><br><a href="mailto:marlynemaximin@gmail.com" style="color:#a7c9ff">marlynemaximin@gmail.com</a></p>
     <p><strong>GitHub</strong><br><a href="https://github.com/Lyne0310/portfolio-bts-sio" target="_blank" rel="noopener" style="color:#a7c9ff">Voir le dépôt ↗</a></p>
+    <p><strong>CV</strong><br><a href="CV_Marlyne_Maximin.pdf" download style="color:#a7c9ff">⬇ Télécharger mon CV (PDF)</a></p>
   </div>
 </div>
 
@@ -660,14 +661,11 @@ const sectionMap={
   experience:{type:"window",id:"experience-window"},
   "expériences":{type:"window",id:"experience-window"},
   contact:{type:"window",id:"contact-window"},
-  email:{type:"window",id:"contact-window"}
+  email:{type:"window",id:"contact-window"},
+  cv:{type:"window",id:"contact-window"}
 };
 
-function setActiveNav(el){
-  document.querySelectorAll(".menu span").forEach(s=>s.classList.remove("active"));
-  document.querySelectorAll(".side-item").forEach(s=>s.classList.remove("active"));
-}
-document.querySelectorAll(".menu span").forEach((el,i)=>{
+document.querySelectorAll(".menu span").forEach((el)=>{
   el.addEventListener("click",()=>{
     document.querySelectorAll(".menu span").forEach(s=>s.classList.remove("active"));
     el.classList.add("active");
