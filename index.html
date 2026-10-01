@@ -152,6 +152,11 @@ h1{margin:10px 0 0;font-size:clamp(46px,6vw,80px);line-height:.95;letter-spacing
 }
 .subtitle{font-size:15px;color:#a9b6d6;letter-spacing:1.5px;margin-top:14px}
 .description{max-width:520px;color:#c3cce4;line-height:1.7;font-size:15.5px;margin-top:6px}
+.intern-badge{
+  display:inline-flex;align-items:center;gap:8px;margin-top:10px;padding:9px 15px;
+  border-radius:999px;background:rgba(74,212,184,.12);border:1px solid rgba(74,212,184,.35);
+  color:#bdf5e4;font-size:13px;font-weight:600;width:fit-content
+}
 .buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:6px}
 .btn{border:0;color:#fff;padding:13px 20px;border-radius:14px;cursor:pointer;transition:.22s;font-size:14px;font-weight:600;display:inline-flex;align-items:center;gap:8px;text-decoration:none}
 .btn:hover{transform:translateY(-3px)}
@@ -369,6 +374,7 @@ h1{margin:10px 0 0;font-size:clamp(46px,6vw,80px);line-height:.95;letter-spacing
         en programmation et en environnement numérique, avec l'envie de construire un
         parcours professionnel ouvert sur le monde.
       </p>
+      <div class="intern-badge">🟢 En recherche d'un stage BTS SIO SLAM · avril – juin 2027</div>
       <div class="buttons">
         <button class="btn primary" onclick="openWindow('about-window')">Découvrir mon univers →</button>
         <button class="btn secondary" onclick="openWindow('projects-window')">Voir mes projets</button>
@@ -510,7 +516,7 @@ h1{margin:10px 0 0;font-size:clamp(46px,6vw,80px);line-height:.95;letter-spacing
       </p>
       <div class="tags"><span class="tag">C#</span><span class="tag">Logique de programmation</span><span class="tag">Gestion d'erreurs</span></div>
     </div>
-    <a class="project-badge" style="text-decoration:none" href="https://github.com/Lyne0310/nombre-cache" target="_blank" rel="noopener">Voir le code ↗</a>
+    <a class="project-badge" style="text-decoration:none" href="https://github.com/Lyne0310/nombre-cache/blob/main/Program.cs" target="_blank" rel="noopener">Voir le code ↗</a>
   </div>
   <div class="card" style="margin-top:15px">
     <div class="card-icon">＋</div><h3>Prochains projets</h3>
@@ -560,6 +566,7 @@ h1{margin:10px 0 0;font-size:clamp(46px,6vw,80px);line-height:.95;letter-spacing
   <div class="section-head">
     <div><div class="section-kicker">07 · Me retrouver</div><h2 class="section-title">Con<span>tact</span></h2></div>
   </div>
+  <p class="section-intro intern-badge">🟢 En recherche d'un stage BTS SIO SLAM · avril – juin 2027 · n'hésite pas à me contacter !</p>
   <div class="contact">
     <div class="contact-card"><strong>GitHub</strong><span>Mes projets et mon évolution technique sont disponibles sur mon profil GitHub.</span><div style="margin-top:12px"><a class="btn secondary" style="display:inline-block;text-decoration:none" href="https://github.com/Lyne0310/portfolio-bts-sio" target="_blank" rel="noopener">Voir le dépôt ↗</a></div></div>
     <div class="contact-card"><strong>Email</strong><span>Tu peux me contacter directement par email.</span><div style="margin-top:12px"><a class="email-link" href="mailto:marlynemaximin@gmail.com">marlynemaximin@gmail.com</a></div></div>
@@ -615,7 +622,7 @@ h1{margin:10px 0 0;font-size:clamp(46px,6vw,80px);line-height:.95;letter-spacing
   <div class="window-header"><div class="window-buttons"><span class="panel-dot r"></span><span class="panel-dot y"></span><span class="panel-dot g"></span></div><span class="close" onclick="closeWindows()">×</span></div>
   <div class="window-content"><h2>Mes projets</h2>
     <p><strong>Portfolio professionnel — Marlyne OS</strong><br>Création d'un portfolio web personnel en HTML, CSS et JavaScript, publié avec GitHub Pages.</p>
-    <p><strong>🎲 Jeu du nombre caché</strong><br>Jeu en ligne de commande en C# : deviner un nombre choisi par le programme, avec indices "trop grand/trop petit" et gestion des erreurs de saisie. <a href="https://github.com/Lyne0310/nombre-cache" target="_blank" rel="noopener" style="color:#a7c9ff">Voir le code ↗</a></p>
+    <p><strong>🎲 Jeu du nombre caché</strong><br>Jeu en ligne de commande en C# : deviner un nombre choisi par le programme, avec indices "trop grand/trop petit" et gestion des erreurs de saisie. <a href="https://github.com/Lyne0310/nombre-cache/blob/main/Program.cs" target="_blank" rel="noopener" style="color:#a7c9ff">Voir le code ↗</a></p>
     <p>D'autres projets viendront enrichir cette section au fil de ma formation BTS SIO : exercices, applications, bases de données.</p>
   </div>
 </div>
@@ -652,6 +659,7 @@ h1{margin:10px 0 0;font-size:clamp(46px,6vw,80px);line-height:.95;letter-spacing
 <div class="window" id="contact-window">
   <div class="window-header"><div class="window-buttons"><span class="panel-dot r"></span><span class="panel-dot y"></span><span class="panel-dot g"></span></div><span class="close" onclick="closeWindows()">×</span></div>
   <div class="window-content"><h2>Me contacter</h2>
+    <p>🟢 <strong>En recherche d'un stage BTS SIO SLAM</strong> · avril – juin 2027</p>
     <p><strong>Email</strong><br><a href="mailto:marlynemaximin@gmail.com" style="color:#a7c9ff">marlynemaximin@gmail.com</a></p>
     <p><strong>GitHub</strong><br><a href="https://github.com/Lyne0310/portfolio-bts-sio" target="_blank" rel="noopener" style="color:#a7c9ff">Voir le dépôt ↗</a></p>
     <p><strong>CV</strong><br><a href="CV_Marlyne_Maximin.pdf" download style="color:#a7c9ff">⬇ Télécharger mon CV (PDF)</a></p>
