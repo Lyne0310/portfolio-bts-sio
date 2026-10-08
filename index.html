@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Portfolio professionnel de Marlyne Maximin — BTS SIO SLAM">
-<title>Marlyne OS — Portfolio BTS SIO SLAM</title>
+<title>Marlyne Maximin — Portfolio BTS SIO SLAM</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -311,6 +311,56 @@ h1{margin:10px 0 0;font-size:clamp(46px,6vw,80px);line-height:.95;letter-spacing
   .project,.contact{grid-template-columns:1fr}
   .window-content{padding:22px}
 }
+
+/* ---------- ajouts portfolio BTS ---------- */
+.ico{width:20px;height:20px;vertical-align:-4px;margin-right:8px}
+.social .ico,.c-ico .ico{margin:0}
+.skill-cat{font-size:15px;color:#9fc0ff;letter-spacing:.5px;margin:26px 0 12px;font-weight:700}
+.stage-box{display:flex;gap:18px;align-items:flex-start;margin-top:22px;padding:24px 26px;border-radius:22px;
+  background:linear-gradient(135deg,rgba(74,212,184,.16),rgba(90,130,255,.12));border:1px solid rgba(74,212,184,.45)}
+.stage-box h3{margin:4px 0 8px;font-size:21px}.stage-box p{margin:0;color:#d5e3f0;line-height:1.6}
+.stage-ico{font-size:30px}.stage-kicker{color:#8ff0d2;text-transform:uppercase;letter-spacing:1.6px;font-size:11.5px;font-weight:700}
+.t-place{font-size:13.5px;color:#c9d6ee !important;margin:2px 0 6px !important}
+.timeline-year{text-transform:uppercase}
+.real-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.real-grid.small{grid-template-columns:1fr 1fr}
+.real{border-radius:20px;overflow:hidden;background:var(--panel);border:1px solid var(--line);cursor:pointer;transition:.22s;display:flex;flex-direction:column}
+.real:hover{transform:translateY(-5px);border-color:rgba(101,167,255,.45)}
+.real img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top;display:block;border-bottom:1px solid var(--line)}
+.real-body{padding:18px 20px 20px;display:flex;flex-direction:column;gap:6px;flex:1}
+.real-body h3{margin:0;font-size:18px}.real-body p{margin:0;color:var(--muted);font-size:14px;line-height:1.6}
+.real-date{color:#9fc0ff;font-size:12px;font-weight:700;letter-spacing:.8px;text-transform:uppercase}
+.real-more{margin-top:auto;padding-top:10px;color:#a7c9ff;font-size:13px;font-weight:600}
+.real-empty{cursor:default;border-style:dashed;background:rgba(255,255,255,.03)}
+.real-empty:hover{transform:none}
+.matrix-wrap{overflow-x:auto;border-radius:18px;border:1px solid var(--line);background:var(--panel)}
+.matrix{width:100%;border-collapse:collapse;font-size:14px}
+.matrix th,.matrix td{padding:12px 16px;border-bottom:1px solid var(--line);text-align:center}
+.matrix th:first-child,.matrix td:first-child{text-align:left}
+.matrix th{color:#9fc0ff;font-size:12px;text-transform:uppercase;letter-spacing:1px}
+.matrix tr:last-child td{border-bottom:0}
+.matrix td.ok{color:#8ff0d2;font-weight:800;font-size:17px}
+.window.wide{width:min(900px,calc(100% - 34px))}
+.detail-img{width:100%;border-radius:14px;border:1px solid var(--line);margin:4px 0 6px}
+.window-content h4{margin:22px 0 6px;color:#9fc0ff;text-transform:uppercase;letter-spacing:1.2px;font-size:12.5px}
+.window-content ul.bloc li{margin:10px 0}
+.window-content code{background:rgba(255,255,255,.08);padding:1px 6px;border-radius:6px}
+.contact-layout{display:grid;grid-template-columns:1fr 1.1fr;gap:18px}
+.contact-list{display:flex;flex-direction:column;gap:10px}
+.contact-row{display:flex;gap:14px;align-items:center;padding:14px 18px;border-radius:16px;background:var(--panel);border:1px solid var(--line)}
+.contact-row strong{display:block;font-size:13px;color:#9fc0ff;margin-bottom:2px}
+.contact-row span,.contact-row a{font-size:14.5px}
+.contact-row span{color:var(--muted)}
+.c-ico{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;background:rgba(255,255,255,.07);font-size:18px;flex:none}
+.email-link{color:var(--blue);text-decoration:none}.email-link:hover{text-decoration:underline}
+.contact-form{padding:24px;border-radius:20px;background:var(--panel);border:1px solid var(--line);display:flex;flex-direction:column;gap:12px}
+.contact-form h3{margin:0 0 4px}
+.contact-form label{display:flex;flex-direction:column;gap:6px;font-size:13px;color:#c9d6ee}
+.contact-form input,.contact-form textarea{font:inherit;color:var(--text);background:rgba(255,255,255,.06);border:1px solid var(--line);border-radius:12px;padding:11px 13px;outline:none}
+.contact-form input:focus,.contact-form textarea:focus{border-color:var(--blue)}
+.contact-form button{align-self:flex-start}
+@media(max-width:980px){.real-grid{grid-template-columns:1fr 1fr}.contact-layout{grid-template-columns:1fr}}
+@media(max-width:600px){.real-grid,.real-grid.small{grid-template-columns:1fr}.stage-box{flex-direction:column}}
 </style>
 </head>
 <body>
@@ -327,14 +377,14 @@ h1{margin:10px 0 0;font-size:clamp(46px,6vw,80px);line-height:.95;letter-spacing
 </div>
 
 <header class="topbar">
-  <div class="logo"><span class="mark"></span> Marlyne OS</div>
+  <div class="logo"><span class="mark"></span> Marlyne Maximin</div>
   <nav class="menu" id="topMenu">
     <span onclick="goHome()" class="active">Accueil</span>
     <span onclick="openWindow('about-window')">À propos</span>
     <span onclick="openWindow('skills-window')">Compétences</span>
-    <span onclick="openWindow('projects-window')">Projets</span>
+    <span onclick="openWindow('projects-window')">Réalisations</span>
     <span onclick="openWindow('watch-window')">Veille</span>
-    <span onclick="openWindow('bts-window')">BTS SIO</span>
+    <span onclick="openWindow('bts-window')">Formation</span>
     <span onclick="openWindow('experience-window')">Expériences</span>
     <span onclick="openWindow('contact-window')">Contact</span>
   </nav>
@@ -349,9 +399,9 @@ h1{margin:10px 0 0;font-size:clamp(46px,6vw,80px);line-height:.95;letter-spacing
   <div class="side-item active" onclick="goHome()"><div class="side-ico">⌂</div><div class="side-label">Accueil</div></div>
   <div class="side-item" onclick="openWindow('about-window')"><div class="side-ico">👤</div><div class="side-label">À propos</div></div>
   <div class="side-item" onclick="openWindow('skills-window')"><div class="side-ico">⌘</div><div class="side-label">Compétences</div></div>
-  <div class="side-item" onclick="openWindow('projects-window')"><div class="side-ico">▣</div><div class="side-label">Projets</div></div>
+  <div class="side-item" onclick="openWindow('projects-window')"><div class="side-ico">▣</div><div class="side-label">Réalisations</div></div>
   <div class="side-item" onclick="openWindow('watch-window')"><div class="side-ico">◉</div><div class="side-label">Veille</div></div>
-  <div class="side-item" onclick="openWindow('bts-window')"><div class="side-ico">🎓</div><div class="side-label">BTS SIO</div></div>
+  <div class="side-item" onclick="openWindow('bts-window')"><div class="side-ico">🎓</div><div class="side-label">Formation</div></div>
   <div class="side-item" onclick="openWindow('experience-window')"><div class="side-ico">💼</div><div class="side-label">Expériences</div></div>
   <div class="side-item" onclick="openWindow('contact-window')"><div class="side-ico">✉</div><div class="side-label">Contact</div></div>
   <div class="side-toggle" onclick="toggleMode()"><div class="knob"></div>Mode clair</div>
@@ -366,22 +416,22 @@ h1{margin:10px 0 0;font-size:clamp(46px,6vw,80px);line-height:.95;letter-spacing
 
   <div class="hero-right">
     <div>
-      <div class="eyebrow">DÉVELOPPEUSE EN DEVENIR</div>
-      <h1>Marlyne<br><span class="gradient">OS</span></h1>
-      <div class="subtitle">ÉTUDIANTE EN BTS SIO — OPTION SLAM</div>
+      <div class="eyebrow">ÉTUDIANTE EN INFORMATIQUE · DÉVELOPPEMENT D'APPLICATIONS</div>
+      <h1>Marlyne<br><span class="gradient">Maximin</span></h1>
+      <div class="subtitle">1<sup>re</sup> ANNÉE BTS SIO — OPTION SLAM · CNED</div>
       <p class="description">
-        En reconversion vers l'informatique, je développe progressivement mes compétences
-        en programmation et en environnement numérique, avec l'envie de construire un
-        parcours professionnel ouvert sur le monde.
+        En reconversion vers l'informatique, je me forme au développement d'applications
+        avec un objectif : devenir développeuse full stack.
       </p>
-      <div class="intern-badge">🟢 En recherche d'un stage BTS SIO SLAM · avril – juin 2027</div>
+      <div class="intern-badge">🟢 Recherche un stage en développement (BTS SIO SLAM) · 4 à 5 semaines · mai à août 2027</div>
       <div class="buttons">
-        <button class="btn primary" onclick="openWindow('about-window')">Découvrir mon univers →</button>
-        <button class="btn secondary" onclick="openWindow('projects-window')">Voir mes projets</button>
+        <button class="btn primary" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">Découvrir mon profil →</button>
+        <button class="btn secondary" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">Voir mes réalisations</button>
         <a class="btn ghost" href="CV_Marlyne_Maximin.pdf" download>⬇ Télécharger mon CV</a>
       </div>
       <div class="socials">
-        <a class="social" href="https://github.com/Lyne0310/portfolio-bts-sio" target="_blank" rel="noopener" title="GitHub">⌥</a>
+        <a class="social" href="https://www.linkedin.com/in/marlyne-maximin-38303b442" target="_blank" rel="noopener" title="LinkedIn"><img class="ico" src="icons/linkedin.svg" alt=""></a>
+        <a class="social" href="https://github.com/Lyne0310" target="_blank" rel="noopener" title="GitHub"><img class="ico" src="icons/github.svg" alt=""></a>
         <a class="social" href="mailto:marlynemaximin@gmail.com" title="Email">✉</a>
       </div>
     </div>
@@ -402,16 +452,10 @@ h1{margin:10px 0 0;font-size:clamp(46px,6vw,80px);line-height:.95;letter-spacing
       <div class="panel">
         <div class="panel-bar"><span class="panel-dot r"></span><span class="panel-dot y"></span><span class="panel-dot g"></span></div>
         <div class="widget-content">
-          <div class="music-row">
-            <div class="music-icon">♫</div>
-            <div><strong>Good Ideas Better Code</strong><br><small class="wx-note">Mode concentration · portfolio</small></div>
-          </div>
-          <div class="music-bar"><span></span></div>
-          <div class="music-times"><span>1:18</span><span>-1:02</span></div>
-          <div class="music-controls">
-            <button onclick="return false">⏮</button>
-            <button class="play" id="playBtn" onclick="toggleMusic()">⏸</button>
-            <button onclick="return false">⏭</button>
+          <div class="widget-title">Métier visé</div>
+          <div class="music-row" style="margin-top:8px">
+            <div class="music-icon">&lt;/&gt;</div>
+            <div><strong>Développeuse full stack</strong><br><small class="wx-note">Applications web : front-end, back-end et bases de données</small></div>
           </div>
         </div>
       </div>
@@ -419,10 +463,10 @@ h1{margin:10px 0 0;font-size:clamp(46px,6vw,80px);line-height:.95;letter-spacing
         <div class="panel-bar"><span class="panel-dot r"></span><span class="panel-dot y"></span><span class="panel-dot g"></span></div>
         <div class="widget-content">
           <div class="widget-title">Mes objectifs</div>
-          <div class="goal-row done"><span class="ring"></span>Obtenir mon BTS SIO (SLAM)</div>
-          <div class="goal-row"><span class="ring"></span>Développer mes compétences</div>
-          <div class="goal-row"><span class="ring"></span>Réaliser des projets concrets</div>
-          <div class="goal-row"><span class="ring"></span>Évoluer vers un métier qui me permet de voyager</div>
+          <div class="goal-row done"><span class="ring"></span>Obtenir mon DAEU (équivalence du bac)</div>
+          <div class="goal-row"><span class="ring"></span>Obtenir mon BTS SIO option SLAM</div>
+                    <div class="goal-row"><span class="ring"></span>Réaliser un stage en développement</div>
+          <div class="goal-row"><span class="ring"></span>Devenir développeuse full stack</div>
         </div>
       </div>
     </div>
@@ -434,7 +478,7 @@ h1{margin:10px 0 0;font-size:clamp(46px,6vw,80px);line-height:.95;letter-spacing
     <div class="panel-bar"><span class="panel-dot r"></span><span class="panel-dot y"></span><span class="panel-dot g"></span></div>
     <div class="terminal-body">
       <div><span class="white">marlyne@MarlyneOS:~$</span> whoami</div>
-      <div>Développeuse en devenir</div>
+      <div>Marlyne Maximin · étudiante BTS SIO SLAM</div>
       <div>&nbsp;</div>
       <div><span class="white">marlyne@MarlyneOS:~$</span> status</div>
       <div>Curieuse · Motivée · Créative · Déterminée</div>
@@ -455,78 +499,137 @@ h1{margin:10px 0 0;font-size:clamp(46px,6vw,80px);line-height:.95;letter-spacing
     <div><div class="section-kicker">01 · Profil</div><h2 class="section-title">À <span>propos</span></h2></div>
   </div>
   <p class="section-intro">
-    Mon parcours associe une première expérience professionnelle dans l'esthétique,
-    le management et l'accueil à une nouvelle orientation vers l'informatique.
-    Cette reconversion m'amène aujourd'hui à développer une nouvelle expertise tout
-    en conservant les qualités humaines et organisationnelles acquises auparavant.
+    Après une dizaine d'années dans l'esthétique, le management d'équipe, la vente et la restauration,
+    j'ai choisi de me reconvertir dans l'informatique. J'ai obtenu le DAEU en 2026 et je suis aujourd'hui
+    en 1<sup>re</sup> année de BTS SIO option SLAM. Mon objectif est de devenir développeuse full stack,
+    en m'appuyant sur les qualités humaines et organisationnelles acquises dans mes précédents métiers.
   </p>
-  <div class="cards">
-    <article class="card"><div class="card-icon">🎓</div><h3>Formation</h3><p>DAEU option A obtenu en 2025/2026. Je poursuis actuellement un BTS SIO, option SLAM.</p><div class="tags"><span class="tag">DAEU A</span><span class="tag">BTS SIO</span><span class="tag">SLAM</span></div></article>
-    <article class="card"><div class="card-icon">🔄</div><h3>Reconversion</h3><p>Après une formation et des expériences dans l'esthétique, le spa, la vente, la restauration et l'accueil, je me réoriente vers l'informatique.</p><div class="tags"><span class="tag">Adaptation</span><span class="tag">Autonomie</span><span class="tag">Organisation</span></div></article>
-    <article class="card"><div class="card-icon">🌍</div><h3>Vision</h3><p>Je souhaite construire un parcours qui combine compétences numériques, évolution professionnelle et ouverture sur le monde.</p><div class="tags"><span class="tag">Digital</span><span class="tag">Créativité</span><span class="tag">International</span></div></article>
+  <div class="stage-box">
+    <div class="stage-ico">🎯</div>
+    <div>
+      <div class="stage-kicker">Recherche de stage</div>
+      <h3>Stage en développement d'applications · BTS SIO option SLAM</h3>
+      <p><strong>Durée :</strong> 4 à 5 semaines &nbsp;·&nbsp; <strong>Période :</strong> entre mai et août 2027</p>
+      <a class="btn primary" href="#contact" style="margin-top:12px">Me contacter →</a>
+    </div>
+  </div>
+  <div class="cards" style="margin-top:18px">
+    <article class="card"><div class="card-icon">🔄</div><h3>Reconversion</h3><p>Esthéticienne, Spa Manager puis vendeuse et serveuse : je me réoriente vers l'informatique, un domaine qui me passionne.</p><div class="tags"><span class="tag">Adaptation</span><span class="tag">Autonomie</span><span class="tag">Organisation</span></div></article>
+    <article class="card"><div class="card-icon">💡</div><h3>Motivation</h3><p>Comprendre un besoin, imaginer une solution puis la construire : c'est ce qui m'attire dans le développement d'applications.</p><div class="tags"><span class="tag">Curiosité</span><span class="tag">Logique</span><span class="tag">Persévérance</span></div></article>
+    <article class="card"><div class="card-icon">🧭</div><h3>Objectif</h3><p>Devenir développeuse full stack, puis poursuivre vers une licence professionnelle ou un bachelor en développement, en alternance.</p><div class="tags"><span class="tag">Full stack</span><span class="tag">Web</span><span class="tag">Bases de données</span></div></article>
+  </div>
+</section>
+
+<section class="section" id="bts">
+  <div class="section-head">
+    <div><div class="section-kicker">02 · Formation</div><h2 class="section-title">Parcours de <span>formation</span></h2></div>
+  </div>
+  <div class="timeline">
+    <div class="timeline-item"><div class="timeline-dot"></div>
+      <div class="timeline-year">DEPUIS SEPTEMBRE 2026 · EN COURS</div>
+      <h3>BTS SIO — Services Informatiques aux Organisations, option SLAM</h3>
+      <p class="t-place">📍 CNED (Centre national d'enseignement à distance) · formation à distance · 1<sup>re</sup> année</p>
+      <div class="bts-box" style="margin-top:12px">
+        <p>L'option <strong>SLAM (Solutions Logicielles et Applications Métiers)</strong> forme au développement d'applications :
+        programmation (C#), conception et exploitation de bases de données (SQL), développement web, tests, documentation
+        et travail en mode projet. Le tronc commun couvre aussi le support aux utilisateurs, la cybersécurité et la gestion
+        du patrimoine informatique.</p>
+        <div class="tags"><span class="tag">Développement</span><span class="tag">Bases de données</span><span class="tag">Web</span><span class="tag">Mode projet</span></div>
+      </div>
+    </div>
+    <div class="timeline-item"><div class="timeline-dot"></div>
+      <div class="timeline-year">2026 · OBTENU</div>
+      <h3>DAEU A — Diplôme d'Accès aux Études Universitaires, option littéraire</h3>
+      <p class="t-place">📍 Université de la Sorbonne, Paris</p>
+      <p>Diplôme national équivalent au baccalauréat, qui m'a permis de reprendre des études supérieures.</p>
+    </div>
   </div>
 </section>
 
 <section class="section" id="skills">
   <div class="section-head">
-    <div><div class="section-kicker">02 · Savoir-faire</div><h2 class="section-title">Compé<span>tences</span></h2></div>
+    <div><div class="section-kicker">03 · Savoir-faire</div><h2 class="section-title">Compétences <span>techniques</span></h2></div>
   </div>
-  <p class="section-intro">Des compétences en construction, présentées honnêtement selon mon niveau actuel d'apprentissage.</p>
+  <p class="section-intro">Les compétences abordées au cours de ma formation, présentées honnêtement selon mon niveau actuel.</p>
+  <h3 class="skill-cat">Développement web</h3>
   <div class="skills">
-    <div class="skill"><div class="skill-top"><span class="skill-name">HTML</span><span class="level">bases</span></div><div class="bar"><span data-width="45%"></span></div></div>
-    <div class="skill"><div class="skill-top"><span class="skill-name">CSS</span><span class="level">bases</span></div><div class="bar"><span data-width="35%"></span></div></div>
-    <div class="skill"><div class="skill-top"><span class="skill-name">JavaScript</span><span class="level">débutant</span></div><div class="bar"><span data-width="15%"></span></div></div>
-    <div class="skill"><div class="skill-top"><span class="skill-name">PHP</span><span class="level">débutant</span></div><div class="bar"><span data-width="10%"></span></div></div>
-    <div class="skill"><div class="skill-top"><span class="skill-name">SQL / MySQL</span><span class="level">débutant</span></div><div class="bar"><span data-width="10%"></span></div></div>
-    <div class="skill"><div class="skill-top"><span class="skill-name">Git / GitHub</span><span class="level">en apprentissage</span></div><div class="bar"><span data-width="25%"></span></div></div>
-    <div class="skill"><div class="skill-top"><span class="skill-name">C#</span><span class="level">débutant</span></div><div class="bar"><span data-width="20%"></span></div></div>
+    <div class="skill"><div class="skill-top"><span class="skill-name"><img class="ico" src="icons/html5.svg" alt="">HTML5</span><span class="level">bases</span></div><div class="bar"><span data-width="45%"></span></div></div>
+    <div class="skill"><div class="skill-top"><span class="skill-name"><img class="ico" src="icons/css3.svg" alt="">CSS3</span><span class="level">bases</span></div><div class="bar"><span data-width="35%"></span></div></div>
+    <div class="skill"><div class="skill-top"><span class="skill-name"><img class="ico" src="icons/javascript.svg" alt="">JavaScript</span><span class="level">débutante</span></div><div class="bar"><span data-width="15%"></span></div></div>
+    <div class="skill"><div class="skill-top"><span class="skill-name"><img class="ico" src="icons/php.svg" alt="">PHP</span><span class="level">débutante</span></div><div class="bar"><span data-width="10%"></span></div></div>
+  </div>
+  <h3 class="skill-cat">Programmation et bases de données</h3>
+  <div class="skills">
+    <div class="skill"><div class="skill-top"><span class="skill-name"><img class="ico" src="icons/csharp.svg" alt="">C# · programmation orientée objet</span><span class="level">débutante</span></div><div class="bar"><span data-width="20%"></span></div></div>
+    <div class="skill"><div class="skill-top"><span class="skill-name"><img class="ico" src="icons/mysql.svg" alt="">SQL / MySQL</span><span class="level">débutante</span></div><div class="bar"><span data-width="10%"></span></div></div>
+  </div>
+  <h3 class="skill-cat">Outils et environnements</h3>
+  <div class="skills">
+    <div class="skill"><div class="skill-top"><span class="skill-name"><img class="ico" src="icons/git.svg" alt="">Git / <img class="ico" src="icons/github.svg" alt="">GitHub</span><span class="level">en apprentissage</span></div><div class="bar"><span data-width="25%"></span></div></div>
+    <div class="skill"><div class="skill-top"><span class="skill-name"><img class="ico" src="icons/vscode.svg" alt="">Visual Studio Code</span><span class="level">utilisation courante</span></div><div class="bar"><span data-width="35%"></span></div></div>
   </div>
   <div class="cards" style="margin-top:15px">
-    <article class="card"><div class="card-icon">🧰</div><h3>Outils bureautiques</h3><p>Word, Excel et PowerPoint · utilisation générale.</p></article>
-    <article class="card"><div class="card-icon">🌐</div><h3>Langues</h3><p>Anglais : niveau intermédiaire · Espagnol : niveau scolaire.</p></article>
-    <article class="card"><div class="card-icon">✨</div><h3>Qualités professionnelles</h3><p>Organisation, gestion d'équipe, planification, accueil et adaptation développés grâce à mes expériences professionnelles.</p></article>
+    <article class="card"><div class="card-icon">🧰</div><h3>Bureautique</h3><p>Word, Excel et PowerPoint · utilisation courante.</p></article>
+    <article class="card"><div class="card-icon">🌐</div><h3>Langues</h3><p>Français : langue maternelle · Anglais : intermédiaire · Espagnol : scolaire.</p></article>
+    <article class="card"><div class="card-icon">✨</div><h3>Savoir-être</h3><p>Organisation, gestion d'équipe, sens du service, adaptation, rigueur et autonomie.</p></article>
   </div>
 </section>
 
 <section class="section" id="projects">
   <div class="section-head">
-    <div><div class="section-kicker">03 · Réalisations</div><h2 class="section-title">Mes <span>projets</span></h2></div>
+    <div><div class="section-kicker">04 · Portfolio</div><h2 class="section-title">Réalisations <span>professionnelles</span></h2></div>
   </div>
-  <div class="project">
-    <div>
-      <div class="project-badge">Projet actuel · Portfolio</div>
-      <h3>Portfolio professionnel — Marlyne OS</h3>
-      <p class="section-intro">
-        Création d'un portfolio web personnel pour présenter mon parcours, mes compétences,
-        ma formation BTS SIO SLAM et mes futures réalisations. Le site utilise HTML, CSS et JavaScript
-        et est publié avec GitHub Pages.
-      </p>
-      <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">GitHub Pages</span></div>
-    </div>
-    <div class="project-badge">En cours d'évolution</div>
+  <p class="section-intro">Mes réalisations, de la plus récente à la plus ancienne. Cliquez sur une vignette pour voir le détail et les compétences du bloc 1 mobilisées.</p>
+  <h3 class="skill-cat">Réalisations en formation</h3>
+  <div class="real-grid">
+    <article class="real" onclick="openWindow('real-portfolio')">
+      <img src="projets/portfolio.png" alt="Capture d'écran du portfolio">
+      <div class="real-body">
+        <div class="real-date">Septembre 2026 · en cours</div>
+        <h3>Portfolio professionnel en ligne</h3>
+        <p>Site présentant mon parcours, mes compétences et mes réalisations, publié avec GitHub Pages.</p>
+        <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">GitHub Pages</span></div>
+        <span class="real-more">Voir le détail →</span>
+      </div>
+    </article>
+    <article class="real" onclick="openWindow('real-nombre')">
+      <img src="projets/nombre-cache.png" alt="Capture d'écran du jeu du nombre caché">
+      <div class="real-body">
+        <div class="real-date">Octobre 2026</div>
+        <h3>Jeu du nombre caché en C#</h3>
+        <p>Application console : trouver un nombre secret avec des indices « trop grand / trop petit » et un compteur d'essais.</p>
+        <div class="tags"><span class="tag">C#</span><span class="tag">Algorithmique</span><span class="tag">Gestion d'erreurs</span><span class="tag">GitHub</span></div>
+        <span class="real-more">Voir le détail →</span>
+      </div>
+    </article>
+    <article class="real real-empty">
+      <div class="real-body">
+        <div class="card-icon">＋</div>
+        <h3>Prochaines réalisations</h3>
+        <p>Cette partie sera enrichie au fil de la formation et de mon stage : applications, bases de données, projets en équipe.</p>
+      </div>
+    </article>
   </div>
-  <div class="project" style="margin-top:15px">
-    <div>
-      <div class="project-badge">Exercice · C#</div>
-      <h3>🎲 Jeu du nombre caché</h3>
-      <p class="section-intro">
-        Petit jeu en ligne de commande développé en C# : le programme choisit un nombre
-        et l'utilisateur doit le deviner en plusieurs essais, avec indication "trop grand / trop petit"
-        à chaque tentative et gestion des erreurs de saisie (try/catch).
-      </p>
-      <div class="tags"><span class="tag">C#</span><span class="tag">Logique de programmation</span><span class="tag">Gestion d'erreurs</span></div>
-    </div>
-    <a class="project-badge" style="text-decoration:none" href="https://github.com/Lyne0310/nombre-cache/blob/main/Program.cs" target="_blank" rel="noopener">Voir le code ↗</a>
-  </div>
-  <div class="card" style="margin-top:15px">
-    <div class="card-icon">＋</div><h3>Prochains projets</h3>
-    <p>Cette zone sera enrichie au fil de ma formation avec mes réalisations BTS SIO : exercices, applications, bases de données et projets personnels.</p>
+
+  <h3 class="skill-cat" style="margin-top:34px">Synthèse des compétences du bloc 1 · « Support et mise à disposition de services informatiques »</h3>
+  <div class="matrix-wrap">
+    <table class="matrix">
+      <thead><tr><th>Compétence du bloc 1</th><th>Portfolio</th><th>Nombre caché</th></tr></thead>
+      <tbody>
+        <tr><td>Gérer le patrimoine informatique</td><td></td><td></td></tr>
+        <tr><td>Répondre aux incidents et aux demandes d'assistance et d'évolution</td><td></td><td></td></tr>
+        <tr><td>Développer la présence en ligne de l'organisation</td><td class="ok">✓</td><td></td></tr>
+        <tr><td>Travailler en mode projet</td><td class="ok">✓</td><td></td></tr>
+        <tr><td>Mettre à disposition des utilisateurs un service informatique</td><td class="ok">✓</td><td></td></tr>
+        <tr><td>Organiser son développement professionnel</td><td class="ok">✓</td><td class="ok">✓</td></tr>
+      </tbody>
+    </table>
   </div>
 </section>
 
 <section class="section" id="watch">
   <div class="section-head">
-    <div><div class="section-kicker">04 · Apprendre & anticiper</div><h2 class="section-title">Veille <span>technologique</span></h2></div>
+    <div><div class="section-kicker">05 · Apprendre &amp; anticiper</div><h2 class="section-title">Veille <span>technologique</span></h2></div>
   </div>
   <p class="section-intro">Ma veille a pour objectif de suivre les évolutions qui peuvent enrichir ma formation et ma future pratique du développement.</p>
   <div class="watch-grid">
@@ -536,56 +639,58 @@ h1{margin:10px 0 0;font-size:clamp(46px,6vw,80px);line-height:.95;letter-spacing
   </div>
 </section>
 
-<section class="section" id="bts">
-  <div class="section-head">
-    <div><div class="section-kicker">05 · Formation actuelle</div><h2 class="section-title">BTS SIO <span>SLAM</span></h2></div>
-  </div>
-  <div class="bts-box">
-    <p>
-      Le BTS Services Informatiques aux Organisations me permet de construire des compétences
-      professionnelles dans le domaine informatique. En option SLAM, je m'intéresse particulièrement
-      au développement de solutions logicielles et d'applications, tout en progressant sur les bases
-      de données, le web et les outils nécessaires au travail d'un développeur.
-    </p>
-    <div class="tags"><span class="tag">Développement</span><span class="tag">Applications</span><span class="tag">Bases de données</span><span class="tag">Projet</span></div>
-  </div>
-</section>
-
 <section class="section" id="experience">
   <div class="section-head">
     <div><div class="section-kicker">06 · Parcours professionnel</div><h2 class="section-title">Expé<span>riences</span></h2></div>
   </div>
   <div class="timeline">
-    <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-year">EXPÉRIENCE PROFESSIONNELLE</div><h3>Spa Manager</h3><p>Responsabilités de management d'équipe, planning, caisse, promotions et participation à la gestion du menu des soins.</p></div>
-    <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-year">FORMATION</div><h3>CAP Esthétique Cosmétique et Parfumerie</h3><p>Formation obtenue en alternance, première étape de mon parcours professionnel.</p></div>
-    <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-year">AUTRES EXPÉRIENCES</div><h3>Restauration · Vente · Accueil</h3><p>Des expériences variées qui m'ont permis de développer le sens du service, l'adaptation, l'organisation et le contact avec le public.</p></div>
+    <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-year">JANVIER 2025 – SEPTEMBRE 2025</div><h3>Serveuse salle et bar · Le Cardinal, Brive-la-Gaillarde</h3><p>Mise en place, service, préparation des boissons et encaissement.</p></div>
+    <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-year">MAI 2023 – JUIN 2024</div><h3>Spa Manager · Beauty Spa, Lagny-sur-Marne</h3><p>Management d'une équipe de 3 personnes, gestion des plannings, de la caisse et de la vitrine, mise en place des promotions et de la carte des soins.</p></div>
+    <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-year">2021 – 2023</div><h3>Vente et restauration · Hugo Boss, Graziella, Brioche Dorée</h3><p>Vente de prêt-à-porter de luxe, service en salle, encaissement et accueil de la clientèle.</p></div>
+    <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-year">OCTOBRE 2017 – JUILLET 2019</div><h3>Responsable boulangerie · Boulangerie Louise, Saint-Thibault-des-Vignes</h3><p>Gestion d'une équipe, de la caisse, des plannings et du marketing.</p></div>
+    <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-year">JUIN 2015 – JUILLET 2017</div><h3>Esthéticienne praticienne · Body Minute, Paris</h3><p>Soins du visage, épilations, massages et manucure.</p></div>
   </div>
 </section>
 
 <section class="section" id="contact">
   <div class="section-head">
-    <div><div class="section-kicker">07 · Me retrouver</div><h2 class="section-title">Con<span>tact</span></h2></div>
+    <div><div class="section-kicker">07 · Me contacter</div><h2 class="section-title">Con<span>tact</span></h2></div>
   </div>
-  <p class="section-intro intern-badge">🟢 En recherche d'un stage BTS SIO SLAM · avril – juin 2027 · n'hésite pas à me contacter !</p>
-  <div class="contact">
-    <div class="contact-card"><strong>GitHub</strong><span>Mes projets et mon évolution technique sont disponibles sur mon profil GitHub.</span><div style="margin-top:12px"><a class="btn secondary" style="display:inline-block;text-decoration:none" href="https://github.com/Lyne0310/portfolio-bts-sio" target="_blank" rel="noopener">Voir le dépôt ↗</a></div></div>
-    <div class="contact-card"><strong>Email</strong><span>Tu peux me contacter directement par email.</span><div style="margin-top:12px"><a class="email-link" href="mailto:marlynemaximin@gmail.com">marlynemaximin@gmail.com</a></div></div>
-    <div class="contact-card"><strong>CV</strong><span>Télécharge mon CV complet au format PDF.</span><div style="margin-top:12px"><a class="btn secondary" style="display:inline-block;text-decoration:none" href="CV_Marlyne_Maximin.pdf" download>⬇ Télécharger le CV</a></div></div>
+  <p class="section-intro intern-badge">🟢 Recherche un stage en développement (BTS SIO SLAM) · 4 à 5 semaines · mai à août 2027 · n'hésitez pas à me contacter.</p>
+  <div class="contact-layout">
+    <div class="contact-list">
+      <div class="contact-row"><span class="c-ico">📍</span><div><strong>Ville</strong><span>Villac (24120), Dordogne · <a class="email-link" href="https://www.openstreetmap.org/search?query=Villac%2024120" target="_blank" rel="noopener">voir sur la carte ↗</a></span></div></div>
+      <div class="contact-row"><span class="c-ico">📱</span><div><strong>Téléphone</strong><a class="email-link" href="tel:+33652794551">06 52 79 45 51</a></div></div>
+      <div class="contact-row"><span class="c-ico">✉</span><div><strong>Email</strong><a class="email-link" href="mailto:marlynemaximin@gmail.com">marlynemaximin@gmail.com</a></div></div>
+      <div class="contact-row"><span class="c-ico"><img class="ico" src="icons/linkedin.svg" alt=""></span><div><strong>LinkedIn</strong><a class="email-link" href="https://www.linkedin.com/in/marlyne-maximin-38303b442" target="_blank" rel="noopener">linkedin.com/in/marlyne-maximin-38303b442 ↗</a></div></div>
+      <div class="contact-row"><span class="c-ico"><img class="ico" src="icons/github.svg" alt=""></span><div><strong>GitHub</strong><a class="email-link" href="https://github.com/Lyne0310" target="_blank" rel="noopener">github.com/Lyne0310 ↗</a></div></div>
+      <div class="contact-row"><span class="c-ico">⬇</span><div><strong>CV</strong><a class="email-link" href="CV_Marlyne_Maximin.pdf" target="_blank" rel="noopener">Voir ou télécharger mon CV (PDF)</a></div></div>
+    </div>
+    <form class="contact-form" action="https://formsubmit.co/marlynemaximin@gmail.com" method="POST">
+      <h3>Envoyer un message</h3>
+      <input type="hidden" name="_subject" value="Nouveau message depuis le portfolio">
+      <input type="hidden" name="_template" value="table">
+      <input type="text" name="_honey" style="display:none">
+      <label>Nom<input type="text" name="nom" required autocomplete="name"></label>
+      <label>Email<input type="email" name="email" required autocomplete="email"></label>
+      <label>Entreprise (facultatif)<input type="text" name="entreprise" autocomplete="organization"></label>
+      <label>Message<textarea name="message" rows="5" required></textarea></label>
+      <button class="btn primary" type="submit">Envoyer →</button>
+    </form>
   </div>
 </section>
 
 <div class="footer">© <span id="year"></span> Marlyne Maximin · Portfolio BTS SIO SLAM</div>
 </main>
 
-<div class="plane-card"><span class="icon">✈</span><p>Same girl<br>Bigger dreams <span class="heart">♥</span></p></div>
 
 <nav class="dock">
   <div class="dock-item" onclick="goHome()" title="Accueil">⌂</div>
   <div class="dock-item" onclick="openWindow('about-window')" title="À propos">👤</div>
   <div class="dock-item" onclick="openWindow('skills-window')" title="Compétences">⌘</div>
-  <div class="dock-item" onclick="openWindow('projects-window')" title="Projets">▣</div>
+  <div class="dock-item" onclick="openWindow('projects-window')" title="Réalisations">▣</div>
   <div class="dock-item" onclick="openWindow('watch-window')" title="Veille">◉</div>
-  <div class="dock-item" onclick="openWindow('bts-window')" title="BTS SIO">🎓</div>
+  <div class="dock-item" onclick="openWindow('bts-window')" title="Formation">🎓</div>
   <div class="dock-item" onclick="openWindow('experience-window')" title="Expériences">💼</div>
   <div class="dock-item" onclick="openWindow('contact-window')" title="Contact">✉</div>
   <a class="dock-item" href="CV_Marlyne_Maximin.pdf" download title="Télécharger le CV">⬇</a>
@@ -595,35 +700,83 @@ h1{margin:10px 0 0;font-size:clamp(46px,6vw,80px);line-height:.95;letter-spacing
 
 <div class="window" id="about-window">
   <div class="window-header"><div class="window-buttons"><span class="panel-dot r"></span><span class="panel-dot y"></span><span class="panel-dot g"></span></div><span class="close" onclick="closeWindows()">×</span></div>
-  <div class="window-content"><h2>Mon parcours</h2>
-    <p>Après un parcours dans l'esthétique, le spa, la vente, la restauration et l'accueil, j'ai choisi de me reconvertir vers l'informatique.</p>
-    <p>J'ai obtenu le DAEU option A en 2025/2026 et je poursuis aujourd'hui un BTS SIO option SLAM. Mon objectif est de progresser pas à pas dans le développement et de construire un projet professionnel qui associe compétences numériques et ouverture sur le monde.</p>
+  <div class="window-content"><h2>Mon profil</h2>
+    <p>Après une dizaine d'années dans l'esthétique, le management d'équipe, la vente et la restauration, j'ai choisi de me reconvertir dans l'informatique.</p>
+    <p>J'ai obtenu le DAEU en 2026 et je suis en 1<sup>re</sup> année de BTS SIO option SLAM au CNED. Mon objectif : devenir développeuse full stack.</p>
+    <p>🎯 <strong>Je recherche un stage en développement de 4 à 5 semaines, entre mai et août 2027.</strong></p>
   </div>
 </div>
 
 <div class="window" id="skills-window">
   <div class="window-header"><div class="window-buttons"><span class="panel-dot r"></span><span class="panel-dot y"></span><span class="panel-dot g"></span></div><span class="close" onclick="closeWindows()">×</span></div>
-  <div class="window-content"><h2>Mes compétences</h2>
-    <p>Des compétences en construction, présentées honnêtement selon mon niveau actuel d'apprentissage.</p>
-    <ul>
-      <li>HTML — bases</li>
-      <li>CSS — bases</li>
-      <li>JavaScript — débutant</li>
-      <li>PHP — débutant</li>
-      <li>SQL / MySQL — débutant</li>
-      <li>Git / GitHub — en apprentissage</li>
-      <li>C# — débutant</li>
-    </ul>
-    <p>Outils bureautiques : Word, Excel, PowerPoint. Langues : anglais intermédiaire, espagnol scolaire.</p>
+  <div class="window-content"><h2>Compétences techniques</h2>
+    <p><strong>Développement web :</strong> HTML5, CSS3 (bases) · JavaScript, PHP (débutante)</p>
+    <p><strong>Programmation et bases de données :</strong> C# et programmation orientée objet, SQL / MySQL (débutante)</p>
+    <p><strong>Outils :</strong> Git, GitHub, Visual Studio Code</p>
+    <p><strong>Bureautique :</strong> Word, Excel, PowerPoint · <strong>Langues :</strong> anglais intermédiaire, espagnol scolaire</p>
   </div>
 </div>
 
 <div class="window" id="projects-window">
   <div class="window-header"><div class="window-buttons"><span class="panel-dot r"></span><span class="panel-dot y"></span><span class="panel-dot g"></span></div><span class="close" onclick="closeWindows()">×</span></div>
-  <div class="window-content"><h2>Mes projets</h2>
-    <p><strong>Portfolio professionnel — Marlyne OS</strong><br>Création d'un portfolio web personnel en HTML, CSS et JavaScript, publié avec GitHub Pages.</p>
-    <p><strong>🎲 Jeu du nombre caché</strong><br>Jeu en ligne de commande en C# : deviner un nombre choisi par le programme, avec indices "trop grand/trop petit" et gestion des erreurs de saisie. <a href="https://github.com/Lyne0310/nombre-cache/blob/main/Program.cs" target="_blank" rel="noopener" style="color:#a7c9ff">Voir le code ↗</a></p>
-    <p>D'autres projets viendront enrichir cette section au fil de ma formation BTS SIO : exercices, applications, bases de données.</p>
+  <div class="window-content"><h2>Réalisations</h2>
+    <div class="real-grid small">
+      <article class="real" onclick="openWindow('real-portfolio')"><img src="projets/portfolio.png" alt=""><div class="real-body"><div class="real-date">Septembre 2026</div><h3>Portfolio professionnel en ligne</h3><span class="real-more">Voir le détail →</span></div></article>
+      <article class="real" onclick="openWindow('real-nombre')"><img src="projets/nombre-cache.png" alt=""><div class="real-body"><div class="real-date">Octobre 2026</div><h3>Jeu du nombre caché en C#</h3><span class="real-more">Voir le détail →</span></div></article>
+    </div>
+  </div>
+</div>
+
+<div class="window wide" id="real-portfolio">
+  <div class="window-header"><div class="window-buttons"><span class="panel-dot r"></span><span class="panel-dot y"></span><span class="panel-dot g"></span></div><span class="close" onclick="closeWindows()">×</span></div>
+  <div class="window-content">
+    <div class="real-date">Septembre 2026 · en cours d'évolution</div>
+    <h2>Portfolio professionnel en ligne</h2>
+    <img class="detail-img" src="projets/portfolio.png" alt="Page d'accueil du portfolio">
+    <h4>Cadre de réalisation</h4>
+    <p>Réalisation en formation, dans le cadre de l'atelier 1 du BTS SIO (compétence B1.6 · Organiser son développement professionnel), au CNED. Projet individuel, mené en autonomie.</p>
+    <h4>Description</h4>
+    <p>Conception et développement d'un site web présentant mon identité professionnelle : profil, parcours de formation, compétences techniques, réalisations, veille technologique, expériences et contact. Le site reprend l'interface d'un système d'exploitation (barre de menus, dock, fenêtres) et s'adapte aux écrans mobiles.</p>
+    <ul>
+      <li>Structure des pages en HTML5 et mise en forme en CSS3 (grilles, animations, mode clair / sombre)</li>
+      <li>Interactions en JavaScript : ouverture des fenêtres, recherche, horloge, animation des compétences</li>
+      <li>Formulaire de contact relié à un service d'envoi d'e-mails</li>
+      <li>Versionnement avec Git et publication en ligne avec GitHub Pages</li>
+    </ul>
+    <h4>Liens</h4>
+    <p><a class="email-link" href="https://lyne0310.github.io/portfolio-bts-sio/" target="_blank" rel="noopener">Voir le site ↗</a> &nbsp;·&nbsp; <a class="email-link" href="https://github.com/Lyne0310/portfolio-bts-sio" target="_blank" rel="noopener">Voir le code sur GitHub ↗</a></p>
+    <h4>Compétences du bloc 1 mobilisées</h4>
+    <ul class="bloc">
+      <li><strong>Développer la présence en ligne de l'organisation</strong> — participer à l'évolution d'un site web ; valoriser une image professionnelle sur les médias numériques</li>
+      <li><strong>Travailler en mode projet</strong> — planifier les activités ; suivre l'avancement grâce à l'historique des versions (Git)</li>
+      <li><strong>Mettre à disposition des utilisateurs un service informatique</strong> — tester et déployer un service (publication sur GitHub Pages)</li>
+      <li><strong>Organiser son développement professionnel</strong> — gérer son identité professionnelle ; développer son projet professionnel</li>
+    </ul>
+  </div>
+</div>
+
+<div class="window wide" id="real-nombre">
+  <div class="window-header"><div class="window-buttons"><span class="panel-dot r"></span><span class="panel-dot y"></span><span class="panel-dot g"></span></div><span class="close" onclick="closeWindows()">×</span></div>
+  <div class="window-content">
+    <div class="real-date">Octobre 2026</div>
+    <h2>Jeu du nombre caché en C#</h2>
+    <img class="detail-img" src="projets/nombre-cache.png" alt="Exécution du jeu dans la console">
+    <h4>Cadre de réalisation</h4>
+    <p>Exercice de programmation réalisé en formation (BTS SIO, CNED), pour mettre en pratique les bases du langage C#. Projet individuel.</p>
+    <h4>Description</h4>
+    <p>Application en ligne de commande : un premier joueur saisit le nombre à trouver, puis le second propose des essais. À chaque essai, le programme indique si la proposition est trop grande ou trop petite, et affiche le nombre d'essais nécessaires une fois le nombre trouvé.</p>
+    <ul>
+      <li>Variables, boucles <code>while</code> et structures conditionnelles</li>
+      <li>Contrôle de saisie avec <code>try / catch</code> : un message d'erreur s'affiche si l'utilisateur ne tape pas un nombre entier</li>
+      <li>Compteur d'essais</li>
+      <li>Code commenté et publié sur GitHub</li>
+    </ul>
+    <h4>Liens</h4>
+    <p><a class="email-link" href="https://github.com/Lyne0310/nombre-cache/blob/main/Program.cs" target="_blank" rel="noopener">Voir le code sur GitHub ↗</a></p>
+    <h4>Compétences du bloc 1 mobilisées</h4>
+    <ul class="bloc">
+      <li><strong>Organiser son développement professionnel</strong> — mettre en place son environnement d'apprentissage personnel (environnement de développement C#, Git, GitHub)</li>
+    </ul>
   </div>
 </div>
 
@@ -640,29 +793,31 @@ h1{margin:10px 0 0;font-size:clamp(46px,6vw,80px);line-height:.95;letter-spacing
 
 <div class="window" id="bts-window">
   <div class="window-header"><div class="window-buttons"><span class="panel-dot r"></span><span class="panel-dot y"></span><span class="panel-dot g"></span></div><span class="close" onclick="closeWindows()">×</span></div>
-  <div class="window-content"><h2>BTS SIO · SLAM</h2>
-    <p>Je suis actuellement en BTS Services Informatiques aux Organisations, option SLAM (Solutions Logicielles et Applications Métiers).</p>
-    <ul><li>Développement et programmation</li><li>Conception et évolution d'applications</li><li>Bases de données</li><li>Environnement web et outils de développement</li></ul>
-    <p>Ce portfolio évoluera avec les compétences et projets réalisés pendant ma formation.</p>
+  <div class="window-content"><h2>Parcours de formation</h2>
+    <p><strong>Depuis septembre 2026 · en cours</strong><br>BTS SIO — Services Informatiques aux Organisations, option SLAM (Solutions Logicielles et Applications Métiers) · 1<sup>re</sup> année · CNED, à distance</p>
+    <p><strong>2026 · obtenu</strong><br>DAEU A — Diplôme d'Accès aux Études Universitaires, option littéraire · Université de la Sorbonne, Paris</p>
   </div>
 </div>
 
 <div class="window" id="experience-window">
   <div class="window-header"><div class="window-buttons"><span class="panel-dot r"></span><span class="panel-dot y"></span><span class="panel-dot g"></span></div><span class="close" onclick="closeWindows()">×</span></div>
-  <div class="window-content"><h2>Mes expériences</h2>
-    <p><strong>Spa Manager</strong><br>Responsabilités de management d'équipe, planning, caisse, promotions et participation à la gestion du menu des soins.</p>
-    <p><strong>CAP Esthétique Cosmétique et Parfumerie</strong><br>Formation obtenue en alternance, première étape de mon parcours professionnel.</p>
-    <p><strong>Restauration · Vente · Accueil</strong><br>Des expériences variées qui m'ont permis de développer le sens du service, l'adaptation, l'organisation et le contact avec le public.</p>
+  <div class="window-content"><h2>Expériences</h2>
+    <p><strong>2025</strong> · Serveuse salle et bar · Le Cardinal, Brive-la-Gaillarde</p>
+    <p><strong>2023 – 2024</strong> · Spa Manager · Beauty Spa, Lagny-sur-Marne</p>
+    <p><strong>2021 – 2023</strong> · Vente et restauration · Hugo Boss, Graziella, Brioche Dorée</p>
+    <p><strong>2017 – 2019</strong> · Responsable boulangerie · Boulangerie Louise</p>
+    <p><strong>2015 – 2017</strong> · Esthéticienne praticienne · Body Minute, Paris</p>
   </div>
 </div>
 
 <div class="window" id="contact-window">
   <div class="window-header"><div class="window-buttons"><span class="panel-dot r"></span><span class="panel-dot y"></span><span class="panel-dot g"></span></div><span class="close" onclick="closeWindows()">×</span></div>
   <div class="window-content"><h2>Me contacter</h2>
-    <p>🟢 <strong>En recherche d'un stage BTS SIO SLAM</strong> · avril – juin 2027</p>
-    <p><strong>Email</strong><br><a href="mailto:marlynemaximin@gmail.com" style="color:#a7c9ff">marlynemaximin@gmail.com</a></p>
-    <p><strong>GitHub</strong><br><a href="https://github.com/Lyne0310/portfolio-bts-sio" target="_blank" rel="noopener" style="color:#a7c9ff">Voir le dépôt ↗</a></p>
-    <p><strong>CV</strong><br><a href="CV_Marlyne_Maximin.pdf" download style="color:#a7c9ff">⬇ Télécharger mon CV (PDF)</a></p>
+    <p>🟢 <strong>Recherche un stage en développement</strong> · 4 à 5 semaines · mai à août 2027</p>
+    <p>📍 Villac (24120) &nbsp;·&nbsp; 📱 <a href="tel:+33652794551" style="color:#a7c9ff">06 52 79 45 51</a></p>
+    <p>✉ <a href="mailto:marlynemaximin@gmail.com" style="color:#a7c9ff">marlynemaximin@gmail.com</a></p>
+    <p><a href="https://www.linkedin.com/in/marlyne-maximin-38303b442" target="_blank" rel="noopener" style="color:#a7c9ff">LinkedIn ↗</a> &nbsp;·&nbsp; <a href="https://github.com/Lyne0310" target="_blank" rel="noopener" style="color:#a7c9ff">GitHub ↗</a> &nbsp;·&nbsp; <a href="CV_Marlyne_Maximin.pdf" target="_blank" rel="noopener" style="color:#a7c9ff">CV (PDF) ↗</a></p>
+    <p><button class="btn primary" onclick="closeWindows();document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Écrire un message →</button></p>
   </div>
 </div>
 
@@ -677,6 +832,9 @@ const sectionMap={
   "compétences":{type:"window",id:"skills-window"},
   projects:{type:"window",id:"projects-window"},
   projets:{type:"window",id:"projects-window"},
+  realisations:{type:"window",id:"projects-window"},
+  formation:{type:"window",id:"bts-window"},
+  stage:{type:"window",id:"contact-window"},
   watch:{type:"window",id:"watch-window"},
   veille:{type:"window",id:"watch-window"},
   bts:{type:"window",id:"bts-window"},
@@ -729,11 +887,6 @@ function toggleMode(){
   document.body.classList.toggle("light-mode");
   const label=document.querySelector(".side-toggle");
   label.lastChild.textContent=document.body.classList.contains("light-mode")?" Mode sombre":" Mode clair";
-}
-let musicPlaying=true;
-function toggleMusic(){
-  musicPlaying=!musicPlaying;
-  document.getElementById("playBtn").textContent=musicPlaying?"⏸":"▶";
 }
 function updateClock(){
   const now=new Date();
